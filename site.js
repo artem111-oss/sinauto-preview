@@ -17,8 +17,9 @@
   $$('[data-open-long]').forEach((el) => { el.textContent = open ? 'Сейчас открыто.' : 'Сейчас закрыто, сообщение прочитаем утром.'; });
 
   /* --- видео: источник подставляется по требованию, вне экрана пауза --- */
-  const arm = (v) => { if (!v.getAttribute('src') && v.dataset.src) v.src = v.dataset.src; };
-  const play = (v) => { if (reduce) return; arm(v); const p = v.play(); if (p) p.catch(() => {}); };
+  const sized = (u) => (desktop.matches || /zero-|-m\.mp4$/.test(u) ? u : u.replace('.mp4', '-m.mp4'));
+  const arm = (v) => { if (!v.getAttribute('src') && v.dataset.src) v.src = sized(v.dataset.src); };
+  const play = (v) => { arm(v); const p = v.play(); if (p) p.catch(() => {}); };
   const lazyVideo = new IntersectionObserver((es) => es.forEach((e) => { e.isIntersecting ? play(e.target) : e.target.pause(); }), { rootMargin: '160px' });
   $$('video[data-autoplay]').forEach((v) => lazyVideo.observe(v));
 
@@ -32,9 +33,11 @@
     caps.forEach((c, k) => c.classList.toggle('is-on', k === i));
     clips.forEach((v, k) => { v.classList.toggle('is-on', k === i); if (k === i) play(v); else setTimeout(() => { if (active !== k) v.pause(); }, 950); });
   };
-  const cycle = (on) => { clearInterval(timer); if (on && !reduce) timer = setInterval(() => setWord((active + 1) % words.length), 4200); };
+  const cycle = (on) => { clearInterval(timer); if (on) timer = setInterval(() => setWord((active + 1) % words.length), 4200); };
   if (hero && words.length) {
     setWord(0);
+    const warm = () => clips.forEach((v) => { v.preload = 'auto'; arm(v); });
+    if (clips[0]) clips[0].addEventListener('playing', warm, { once: true });
     new IntersectionObserver(([e]) => { cycle(e.isIntersecting); if (e.isIntersecting) play(clips[active]); else clips.forEach((v) => v.pause()); }, { threshold: 0.05 }).observe(hero);
     if (canHover) words.forEach((w, k) => w.addEventListener('mouseenter', () => { setWord(k); cycle(true); }));
   }
@@ -86,7 +89,7 @@
       works.forEach((w) => { const on = w === li; w.classList.toggle('is-active', on); $('button', w).setAttribute('aria-pressed', on); });
       if (key === cur && vid.getAttribute('src')) return;
       cur = key;
-      const swap = () => { vid.poster = base + key + '.jpg'; vid.src = base + key + '.mp4'; no.textContent = $('.work__no', li).textContent; name.textContent = $('.work__name', li).textContent; if (!reduce) { const p = vid.play(); if (p) p.catch(() => {}); } };
+      const swap = () => { vid.poster = base + key + '.jpg'; vid.src = sized(base + key + '.mp4'); no.textContent = $('.work__no', li).textContent; name.textContent = $('.work__name', li).textContent; const p = vid.play(); if (p) p.catch(() => {}); };
       if (motion) {
         if (busy) busy.kill();
         busy = gsap.timeline().to(screen, { clipPath: 'inset(0% 0% 100% 0%)', duration: 0.3, ease: 'power3.in' }).add(swap).fromTo(screen, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.65, ease: 'expo.out' }).fromTo(vid, { scale: 1.18 }, { scale: 1, duration: 1.1, ease: 'expo.out' }, '<');
@@ -97,7 +100,7 @@
       b.addEventListener('click', () => show(li)); b.addEventListener('focus', () => show(li));
       if (canHover) b.addEventListener('mouseenter', () => show(li));
     });
-    new IntersectionObserver(([e]) => { if (e.isIntersecting) { if (!vid.getAttribute('src')) vid.src = base + cur + '.mp4'; play(vid); } else vid.pause(); }, { rootMargin: '100px' }).observe(screen);
+    new IntersectionObserver(([e]) => { if (e.isIntersecting) { if (!vid.getAttribute('src')) vid.src = sized(base + cur + '.mp4'); play(vid); } else vid.pause(); }, { rootMargin: '100px' }).observe(screen);
     const grid = screen.parentElement;
     const place = () => { const on = $('.work.is-active') || works[0]; if (desktop.matches) grid.appendChild(screen); else on.appendChild(screen); };
     works.forEach((li) => $('button', li).addEventListener('click', () => { if (!desktop.matches) li.appendChild(screen); }));
