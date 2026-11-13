@@ -98,10 +98,10 @@
       if (canHover) b.addEventListener('mouseenter', () => show(li));
     });
     new IntersectionObserver(([e]) => { if (e.isIntersecting) { if (!vid.getAttribute('src')) vid.src = base + cur + '.mp4'; play(vid); } else vid.pause(); }, { rootMargin: '100px' }).observe(screen);
-    if (!canHover) {
-      const mid = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) show(e.target); }), { rootMargin: '-55% 0px -40% 0px' });
-      works.forEach((li) => mid.observe(li));
-    }
+    const grid = screen.parentElement;
+    const place = () => { const on = $('.work.is-active') || works[0]; if (desktop.matches) grid.appendChild(screen); else on.appendChild(screen); };
+    works.forEach((li) => $('button', li).addEventListener('click', () => { if (!desktop.matches) li.appendChild(screen); }));
+    place(); desktop.addEventListener('change', place);
   }
 
   if (motion) {
@@ -116,7 +116,7 @@
       gsap.utils.toArray('.work').forEach((w, i) => gsap.from(w, { opacity: 0, y: 36, duration: 0.8, ease: 'expo.out', delay: i * 0.06, scrollTrigger: { trigger: '.works__list', start: 'top 80%' } }));
     });
     /* цифры «0 ₽» выезжают сбоку, оценка и подпись в подвале плывут */
-    $$('.zero__glyph').forEach((g, i) => gsap.from(g, { xPercent: i ? 22 : -22, ease: 'none', scrollTrigger: { trigger: g, start: 'top bottom', end: 'top 35%', scrub: 0.5 } }));
+    if (desktop.matches) $$('.zero__glyph').forEach((g, i) => gsap.from(g, { xPercent: i ? 22 : -22, ease: 'none', scrollTrigger: { trigger: g, start: 'top bottom', end: 'top 35%', scrub: 0.5 } }));
     gsap.to('.reviews__num', { yPercent: -12, ease: 'none', scrollTrigger: { trigger: '.reviews', start: 'top bottom', end: 'bottom top', scrub: true } });
     gsap.fromTo('[data-crew] video', { scale: 1.25 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: '[data-crew]', start: 'top bottom', end: 'bottom bottom', scrub: true } });
     gsap.from('[data-crew] h2', { yPercent: 60, opacity: 0, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: '[data-crew]', start: 'top 45%' } });
@@ -138,7 +138,11 @@
 
   /* --- нижняя панель на телефоне уходит, когда виден блок записи --- */
   const dock = $('.dock'), book = $('#book');
-  if (dock && book) new IntersectionObserver(([e]) => { dock.style.transform = e.isIntersecting ? 'translateY(100%)' : ''; }, { threshold: 0.15 }).observe(book);
+  if (dock && book) {
+    const off = new Set();
+    const io = new IntersectionObserver((es) => { es.forEach((e) => { if (e.isIntersecting) off.add(e.target); else off.delete(e.target); }); dock.classList.toggle('is-off', off.size > 0); }, { threshold: 0.15 });
+    io.observe(book); if (pin) io.observe(pin);
+  }
 
   /* --- форма: проверяет поля; адрес отправки ещё не подключён --- */
   const form = $('[data-form]');
