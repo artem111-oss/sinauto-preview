@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sin Auto, автосервис на Трамвайной в Уфе</title>
 <meta name="description" content="Автосервис Sin Auto в Уфе, Трамвайная, 15/4. Поднимем машину, покажем, что с ней, и починим. Осмотр ходовой бесплатно. Каждый день с 10 до 20.">
@@ -13,24 +12,55 @@
 <link rel="stylesheet" href="site.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 32'%3E%3Cpath d='M14 1.5 26.5 8.75v14.5L14 30.5 1.5 23.25V8.75Z' fill='%23100e0c' stroke='%23cba55b' stroke-width='2.5'/%3E%3C/svg%3E">
 <link rel="preload" as="image" href="assets/stock/lift.jpg">
+<!-- build:meta -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="box-api" content="http://localhost:8765">
+<link rel="stylesheet" href="pages.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "AutoRepair", "name": "Sin Auto", "url": "https://artem111-oss.github.io/sinauto-preview/", "telephone": "+79931339336", "address": {"@type": "PostalAddress", "streetAddress": "ул. Трамвайная, 15/4", "addressLocality": "Уфа", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": 54.800835, "longitude": 56.092322}, "openingHours": "Mo-Su 10:00-20:00"}</script>
+<!-- /build:meta -->
 </head>
 <body>
 <a class="skip" href="#main">К содержанию</a>
 
+<!-- build:nav -->
 <header class="nav" data-nav>
-  <a class="nav__mark" href="#top" aria-label="Sin Auto, в начало">
+  <a class="nav__mark" href="#top" aria-label="Sin Auto, на главную">
     <svg class="hex" viewBox="0 0 28 32" aria-hidden="true"><path d="M14 1.5 26.5 8.75v14.5L14 30.5 1.5 23.25V8.75Z"/></svg>
     <span>Sin Auto</span>
   </a>
-  <nav class="nav__links" aria-label="Разделы">
-    <a href="#works">Работы</a>
-    <a href="#visit">Как проходит визит</a>
-    <a href="#reviews">Отзывы</a>
-    <a href="#book">Адрес</a>
+  <nav class="nav__links" aria-label="Разделы сайта">
+    <a href="price/">Цены и услуги</a>
+    <a href="garantiya/">Гарантия</a>
+    <a href="kontakty/">Контакты</a>
   </nav>
   <p class="nav__status" data-open hidden></p>
   <a class="nav__phone" href="tel:+79931339336">+7 993 133-93-36</a>
+  <a class="btn btn--gold nav__cta" href="zapis/">Записаться</a>
+  <details class="menu" data-menu>
+    <summary class="menu__btn"><span class="menu__icon" aria-hidden="true"></span><span>Меню</span></summary>
+    <nav class="menu__panel" aria-label="Меню">
+      <ul class="menu__main">
+        <li><a href="#top">Главная</a></li>
+        <li><a href="price/">Цены и услуги</a></li>
+        <li><a href="zapis/">Запись онлайн</a></li>
+        <li><a href="kontakty/">Контакты</a></li>
+        <li><a href="garantiya/">Гарантия</a></li>
+      </ul>
+      <ul class="menu__sub">
+        <li><a href="uslugi/chassis-repair/">Ходовая и подвеска</a></li>
+        <li><a href="uslugi/brakes/">Тормоза</a></li>
+        <li><a href="uslugi/alignment/">Развал-схождение</a></li>
+        <li><a href="uslugi/oil-change/">Замена масла и ТО</a></li>
+        <li><a href="uslugi/tire-fitting/">Шиномонтаж</a></li>
+        <li><a href="uslugi/computer-diag/">Компьютерная диагностика</a></li>
+        <li><a href="uslugi/exhaust-welding/">Сварка и выхлоп</a></li>
+        <li><a href="uslugi/ac-service/">Кондиционер</a></li>
+        <li><a href="price/#grm">Замена ГРМ</a></li>
+      </ul>
+    </nav>
+  </details>
 </header>
+<!-- /build:nav -->
 
 <main id="main">
 
@@ -62,8 +92,8 @@
     <div class="hero__bar">
       <p class="hero__lead">Автосервис трёх друзей в Уфе, на Трамвайной, 15/4.</p>
       <div class="hero__actions">
-        <a class="btn btn--gold" href="tel:+79931339336">Позвонить</a>
-        <a class="btn btn--ghost" href="https://t.me/+79931339336">Написать в Telegram</a>
+        <a class="btn btn--gold" href="zapis/">Записаться</a>
+        <a class="btn btn--ghost" href="tel:+79931339336">Позвонить</a>
       </div>
       <a class="hero__rating" href="https://2gis.ru/ufa/firm/70000001102839274/tab/reviews">
         <b>5,0</b><span>в 2ГИС, 60 оценок<br>на 12.11.2026</span>
@@ -244,7 +274,7 @@
 <!-- 9. Запись -->
 <section class="book" id="book" aria-labelledby="book-h">
   <div class="wrap">
-    <h2 id="book-h" class="book__h">Запишитесь звонком<br>или сообщением</h2>
+    <h2 id="book-h" class="book__h">Запишитесь онлайн,<br>звонком или сообщением</h2>
     <a class="book__phone" href="tel:+79931339336"><span>+7 993</span> <span>133-93-36</span></a>
     <div class="book__grid">
       <div class="book__where">
@@ -256,18 +286,16 @@
         <dl class="facts">
           <div><dt>Адрес</dt><dd>Уфа, ул. Трамвайная, 15/4. 350 м от ТСК «Радуга».</dd></div>
           <div><dt>Часы</dt><dd>Каждый день с 10:00 до 20:00. <span data-open-long></span></dd></div>
-          <div><dt>Запись</dt><dd>Онлайн-расписания нет: время подберём по телефону или в чате.</dd></div>
+          <div><dt>Запись</dt><dd>Онлайн — <a class="link" href="zapis/">выбрать работу и свободное время</a>. Или по телефону и в чате.</dd></div>
+          <div><dt>Цены</dt><dd><a class="link" href="price/">Прайс по всем работам</a>. Осмотр ходовой бесплатно.</dd></div>
         </dl>
       </div>
-      <form class="form" data-form novalidate>
-        <h3>Или оставьте номер, перезвоним</h3>
-        <label class="field"><span>Как к вам обращаться</span><input type="text" name="name" autocomplete="given-name" required></label>
-        <label class="field"><span>Телефон</span><input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+7" required></label>
-        <label class="field"><span>Что с машиной</span><textarea name="car" rows="3" placeholder="Марка, год и что беспокоит"></textarea></label>
-        <label class="check"><input type="checkbox" name="agree" required><span>Согласен на обработку имени и телефона для записи в сервис</span></label>
-        <button class="btn btn--ink" type="submit">Отправить заявку</button>
-        <p class="form__note" role="status" aria-live="polite" data-form-note></p>
-      </form>
+      <div class="form">
+        <h3>Запись онлайн</h3>
+        <p>Три шага: работа, время, контакты. Свободное время видно сразу.</p>
+        <a class="btn btn--ink" href="zapis/">Выбрать время</a>
+        <a class="link" href="kontakty/">Как проехать</a>
+      </div>
     </div>
   </div>
 </section>
@@ -276,21 +304,64 @@
 
 <footer class="foot">
   <p class="foot__mark" aria-hidden="true">Sin Auto</p>
-  <div class="wrap foot__row">
-    <p>Sin Auto, автосервис и автозапчасти. Уфа, Трамвайная, 15/4.</p>
+<!-- build:foot-nav -->
+<nav class="foot__nav wrap" aria-label="Страницы сайта">
+  <div>
+    <p class="foot__h">Работы</p>
     <ul>
+      <li><a href="uslugi/chassis-repair/">Ходовая и подвеска</a></li>
+      <li><a href="uslugi/brakes/">Тормоза</a></li>
+      <li><a href="uslugi/alignment/">Развал-схождение</a></li>
+      <li><a href="uslugi/oil-change/">Замена масла и ТО</a></li>
+      <li><a href="uslugi/tire-fitting/">Шиномонтаж</a></li>
+      <li><a href="uslugi/computer-diag/">Компьютерная диагностика</a></li>
+      <li><a href="uslugi/exhaust-welding/">Сварка и выхлоп</a></li>
+      <li><a href="uslugi/ac-service/">Кондиционер</a></li>
+      <li><a href="price/#grm">Замена ГРМ</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="foot__h">Сервис</p>
+    <ul>
+      <li><a href="#top">Главная</a></li>
+      <li><a href="price/">Цены и услуги</a></li>
+      <li><a href="zapis/">Запись онлайн</a></li>
+      <li><a href="garantiya/">Гарантия</a></li>
+      <li><a href="kontakty/">Контакты и реквизиты</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="foot__h">Связь</p>
+    <ul>
+      <li><a href="tel:+79931339336">+7 993 133-93-36</a></li>
+      <li><a href="https://t.me/+79931339336">Написать в Telegram</a></li>
       <li><a href="https://t.me/sin_auto_ufa">Канал в Telegram</a></li>
       <li><a href="https://2gis.ru/ufa/firm/70000001102839274">Карточка в 2ГИС</a></li>
-      <li><a href="tel:+79931339336">+7 993 133-93-36</a></li>
+      <li><a href="https://yandex.ru/maps/org/sin_avto/22664543317/">Яндекс Карты</a></li>
     </ul>
+  </div>
+  <div>
+    <p class="foot__h">Документы</p>
+    <ul>
+      <li><a href="politika/">Политика обработки персональных данных</a></li>
+      <li><a href="soglasie/">Согласие на обработку персональных данных</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- /build:foot-nav -->
+  <div class="wrap foot__row">
+    <p>Sin Auto, автосервис и автозапчасти. Уфа, Трамвайная, 15/4.</p>
     <p class="foot__credit">Видео в макете временные, со стока Pexels. На их место встанет съёмка в боксе Sin Auto.</p>
   </div>
 </footer>
 
+<!-- build:dock -->
 <nav class="dock" aria-label="Быстрая связь">
   <a href="tel:+79931339336">Позвонить</a>
   <a href="https://t.me/+79931339336">Telegram</a>
+  <a class="dock__book" href="zapis/">Записаться</a>
 </nav>
+<!-- /build:dock -->
 
 <script src="vendor/gsap.min.js" defer></script>
 <script src="vendor/ScrollTrigger.min.js" defer></script>

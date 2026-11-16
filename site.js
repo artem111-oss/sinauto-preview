@@ -21,7 +21,7 @@
   const arm = (v) => { if (!v.getAttribute('src') && v.dataset.src) v.src = sized(v.dataset.src); };
   const play = (v) => { arm(v); const p = v.play(); if (p) p.catch(() => {}); };
   const lazyVideo = new IntersectionObserver((es) => es.forEach((e) => { e.isIntersecting ? play(e.target) : e.target.pause(); }), { rootMargin: '160px' });
-  $$('video[data-autoplay]').forEach((v) => lazyVideo.observe(v));
+  if (!reduce) $$('video[data-autoplay]').forEach((v) => lazyVideo.observe(v));
 
   /* --- герой: слова по очереди, под каждое свой кадр --- */
   const hero = $('[data-hero]'), pin = $('[data-hero-pin]');
@@ -145,6 +145,13 @@
     const off = new Set();
     const io = new IntersectionObserver((es) => { es.forEach((e) => { if (e.isIntersecting) off.add(e.target); else off.delete(e.target); }); dock.classList.toggle('is-off', off.size > 0); }, { threshold: 0.15 });
     io.observe(book); if (pin) io.observe(pin);
+  }
+
+  /* --- меню на телефоне: закрывается по Escape и при переходе по ссылке --- */
+  const menu = $('[data-menu]');
+  if (menu) {
+    addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.open) { menu.open = false; $('summary', menu).focus(); } });
+    $$('a', menu).forEach((a) => a.addEventListener('click', () => { menu.open = false; }));
   }
 
   /* --- форма: проверяет поля; адрес отправки ещё не подключён --- */
