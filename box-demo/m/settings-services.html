@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0d0b09">
+<title>Услуги и цены · Sin Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/box.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 32'%3E%3Cpath d='M14 1.5 26.5 8.75v14.5L14 30.5 1.5 23.25V8.75Z' fill='%23100e0c' stroke='%23cba55b' stroke-width='2.5'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="top__in">
+    <a class="brand" href="../m/today.html">Бокс <b>·</b></a>
+    
+    <nav class="nav" aria-label="Разделы">
+      <a href="../m/today.html" >Сегодня</a>
+      
+      <a href="../m/admin.html" >Дела <span class="nav__badge" aria-label="6 ждут">6</span></a>
+      <a href="../m/clients.html" >Клиенты</a>
+      <a href="../m/mail-queue.html" >Рассылки</a>
+      <a href="../m/stats.html" >Сводка</a>
+      <a href="../m/settings.html" aria-current="page">Настройки</a>
+      
+      <form method="post" action="#demo"><button type="submit">Выйти</button></form>
+    </nav>
+    
+  </div>
+</header>
+<main class="page">
+
+<div class="cs-wide">
+<p class="small" style="margin-top:14px"><a href="../m/settings.html">← Настройки</a></p>
+<nav class="chips cs-chips" aria-label="Разделы настроек">
+  
+  <a class="chip cs-chip" href="../m/settings-services.html" aria-current="page">Услуги и цены</a>
+  
+  <a class="chip cs-chip" href="../m/settings-hours.html" >Часы работы</a>
+  
+  <a class="chip cs-chip" href="../m/settings-capacity.html" >Ёмкость и запись</a>
+  
+  <a class="chip cs-chip" href="../m/settings-shop.html" >Сервис</a>
+  
+  <a class="chip cs-chip" href="../m/settings-checklist.html" >Чек-лист осмотра</a>
+  
+  <a class="chip cs-chip" href="../m/settings.html#staff" >Сотрудники</a>
+  
+  <a class="chip cs-chip" href="../m/settings-audit.html" >Журнал</a>
+  
+</nav>
+
+
+<script>
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('button[data-confirm]');
+  if (b && !confirm(b.getAttribute('data-confirm'))) e.preventDefault();
+});
+</script>
+<h1>Услуги и цены</h1>
+<p class="small muted">Поля с меткой <span class="cs-site">сайт</span> видны клиентам. Пустая цена — «назовём после осмотра».
+  Длительность — кратно 30 мин. Убрать услугу — снять «Показывать»: история визитов её помнит.</p>
+
+<form method="post" action="#demo" class="cs-svcform">
+<button type="submit" class="sr-only" tabindex="-1" aria-hidden="true">Сохранить</button>
+
+<fieldset class="card cs-svc " id="svc-inspect-chassis">
+  <legend class="sr-only">Осмотр ходовой</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">inspect-chassis</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="inspect-chassis:up" aria-label="Выше: Осмотр ходовой" disabled>↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="inspect-chassis:down" aria-label="Ниже: Осмотр ходовой" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-inspect-chassis">Название <span class="cs-site">сайт</span></label><input id="n-inspect-chassis" name="name_inspect-chassis" type="text" value="Осмотр ходовой" required maxlength="120"></div>
+    <div><label for="p-inspect-chassis">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-inspect-chassis" name="price_inspect-chassis" type="text" inputmode="numeric" value="0" placeholder="после осмотра"></div>
+    <div><label for="d-inspect-chassis">Длительность, мин</label><input id="d-inspect-chassis" name="dur_inspect-chassis" type="number" inputmode="numeric" min="30" step="30" value="30" required></div>
+    <div class="cs-span2"><label for="pn-inspect-chassis">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-inspect-chassis" name="note_inspect-chassis" type="text" value="бесплатно" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-inspect-chassis">Ресурс</label>
+      <select id="r-inspect-chassis" name="res_inspect-chassis"><option value="lift" selected>Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-inspect-chassis">Описание <span class="cs-site">сайт</span></label><textarea id="sh-inspect-chassis" name="short_inspect-chassis" rows="2" maxlength="400">Поднимаем машину, проверяем подвеску и рулевое, показываем фото и говорим, что срочно, а что может подождать.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_inspect-chassis" value="1" checked> Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_inspect-chassis" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-chassis-repair">
+  <legend class="sr-only">Ремонт ходовой и подвески</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">chassis-repair</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="chassis-repair:up" aria-label="Выше: Ремонт ходовой и подвески" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="chassis-repair:down" aria-label="Ниже: Ремонт ходовой и подвески" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-chassis-repair">Название <span class="cs-site">сайт</span></label><input id="n-chassis-repair" name="name_chassis-repair" type="text" value="Ремонт ходовой и подвески" required maxlength="120"></div>
+    <div><label for="p-chassis-repair">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-chassis-repair" name="price_chassis-repair" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-chassis-repair">Длительность, мин</label><input id="d-chassis-repair" name="dur_chassis-repair" type="number" inputmode="numeric" min="30" step="30" value="180" required></div>
+    <div class="cs-span2"><label for="pn-chassis-repair">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-chassis-repair" name="note_chassis-repair" type="text" value="" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-chassis-repair">Ресурс</label>
+      <select id="r-chassis-repair" name="res_chassis-repair"><option value="lift" selected>Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-chassis-repair">Описание <span class="cs-site">сайт</span></label><textarea id="sh-chassis-repair" name="short_chassis-repair" rows="2" maxlength="400">Стойки, амортизаторы, рычаги и сайлентблоки, шаровые, ступичные подшипники, ШРУСы и пыльники. Запись — через бесплатный осмотр.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_chassis-repair" value="1" > Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_chassis-repair" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-steering">
+  <legend class="sr-only">Ремонт рулевого управления</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">steering</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="steering:up" aria-label="Выше: Ремонт рулевого управления" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="steering:down" aria-label="Ниже: Ремонт рулевого управления" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-steering">Название <span class="cs-site">сайт</span></label><input id="n-steering" name="name_steering" type="text" value="Ремонт рулевого управления" required maxlength="120"></div>
+    <div><label for="p-steering">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-steering" name="price_steering" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-steering">Длительность, мин</label><input id="d-steering" name="dur_steering" type="number" inputmode="numeric" min="30" step="30" value="180" required></div>
+    <div class="cs-span2"><label for="pn-steering">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-steering" name="note_steering" type="text" value="" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-steering">Ресурс</label>
+      <select id="r-steering" name="res_steering"><option value="lift" selected>Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-steering">Описание <span class="cs-site">сайт</span></label><textarea id="sh-steering" name="short_steering" rows="2" maxlength="400">Рулевые тяги и наконечники, рулевые рейки, гидроусилитель.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_steering" value="1" > Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_steering" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-brakes">
+  <legend class="sr-only">Тормозная система</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">brakes</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="brakes:up" aria-label="Выше: Тормозная система" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="brakes:down" aria-label="Ниже: Тормозная система" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-brakes">Название <span class="cs-site">сайт</span></label><input id="n-brakes" name="name_brakes" type="text" value="Тормозная система" required maxlength="120"></div>
+    <div><label for="p-brakes">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-brakes" name="price_brakes" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-brakes">Длительность, мин</label><input id="d-brakes" name="dur_brakes" type="number" inputmode="numeric" min="30" step="30" value="90" required></div>
+    <div class="cs-span2"><label for="pn-brakes">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-brakes" name="note_brakes" type="text" value="" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-brakes">Ресурс</label>
+      <select id="r-brakes" name="res_brakes"><option value="lift" selected>Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-brakes">Описание <span class="cs-site">сайт</span></label><textarea id="sh-brakes" name="short_brakes" rows="2" maxlength="400">Колодки, диски, суппорты, замена тормозной жидкости.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_brakes" value="1" checked> Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_brakes" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-alignment">
+  <legend class="sr-only">Развал-схождение</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">alignment</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="alignment:up" aria-label="Выше: Развал-схождение" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="alignment:down" aria-label="Ниже: Развал-схождение" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-alignment">Название <span class="cs-site">сайт</span></label><input id="n-alignment" name="name_alignment" type="text" value="Развал-схождение" required maxlength="120"></div>
+    <div><label for="p-alignment">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-alignment" name="price_alignment" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-alignment">Длительность, мин</label><input id="d-alignment" name="dur_alignment" type="number" inputmode="numeric" min="30" step="30" value="60" required></div>
+    <div class="cs-span2"><label for="pn-alignment">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-alignment" name="note_alignment" type="text" value="" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-alignment">Ресурс</label>
+      <select id="r-alignment" name="res_alignment"><option value="lift" >Подъёмник</option><option value="alignment" selected>Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-alignment">Описание <span class="cs-site">сайт</span></label><textarea id="sh-alignment" name="short_alignment" rows="2" maxlength="400">Регулировка углов колёс на стенде, распечатка «до» и «после».</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_alignment" value="1" checked> Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_alignment" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-oil-change">
+  <legend class="sr-only">Замена масла и фильтров</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">oil-change</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="oil-change:up" aria-label="Выше: Замена масла и фильтров" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="oil-change:down" aria-label="Ниже: Замена масла и фильтров" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-oil-change">Название <span class="cs-site">сайт</span></label><input id="n-oil-change" name="name_oil-change" type="text" value="Замена масла и фильтров" required maxlength="120"></div>
+    <div><label for="p-oil-change">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-oil-change" name="price_oil-change" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-oil-change">Длительность, мин</label><input id="d-oil-change" name="dur_oil-change" type="number" inputmode="numeric" min="30" step="30" value="60" required></div>
+    <div class="cs-span2"><label for="pn-oil-change">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-oil-change" name="note_oil-change" type="text" value="работа бесплатно при покупке масла у нас" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-oil-change">Ресурс</label>
+      <select id="r-oil-change" name="res_oil-change"><option value="lift" selected>Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-oil-change">Описание <span class="cs-site">сайт</span></label><textarea id="sh-oil-change" name="short_oil-change" rows="2" maxlength="400">Моторное масло, масляный, воздушный и салонный фильтры.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_oil-change" value="1" checked> Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_oil-change" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-service-to">
+  <legend class="sr-only">Техническое обслуживание</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">service-to</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="service-to:up" aria-label="Выше: Техническое обслуживание" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="service-to:down" aria-label="Ниже: Техническое обслуживание" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-service-to">Название <span class="cs-site">сайт</span></label><input id="n-service-to" name="name_service-to" type="text" value="Техническое обслуживание" required maxlength="120"></div>
+    <div><label for="p-service-to">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-service-to" name="price_service-to" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-service-to">Длительность, мин</label><input id="d-service-to" name="dur_service-to" type="number" inputmode="numeric" min="30" step="30" value="120" required></div>
+    <div class="cs-span2"><label for="pn-service-to">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-service-to" name="note_service-to" type="text" value="" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-service-to">Ресурс</label>
+      <select id="r-service-to" name="res_service-to"><option value="lift" selected>Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-service-to">Описание <span class="cs-site">сайт</span></label><textarea id="sh-service-to" name="short_service-to" rows="2" maxlength="400">Плановое ТО по регламенту: жидкости, фильтры, свечи, осмотр.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_service-to" value="1" checked> Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_service-to" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-timing-belt">
+  <legend class="sr-only">Замена ГРМ</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">timing-belt</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="timing-belt:up" aria-label="Выше: Замена ГРМ" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="timing-belt:down" aria-label="Ниже: Замена ГРМ" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-timing-belt">Название <span class="cs-site">сайт</span></label><input id="n-timing-belt" name="name_timing-belt" type="text" value="Замена ГРМ" required maxlength="120"></div>
+    <div><label for="p-timing-belt">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-timing-belt" name="price_timing-belt" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-timing-belt">Длительность, мин</label><input id="d-timing-belt" name="dur_timing-belt" type="number" inputmode="numeric" min="30" step="30" value="240" required></div>
+    <div class="cs-span2"><label for="pn-timing-belt">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-timing-belt" name="note_timing-belt" type="text" value="" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-timing-belt">Ресурс</label>
+      <select id="r-timing-belt" name="res_timing-belt"><option value="lift" selected>Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-timing-belt">Описание <span class="cs-site">сайт</span></label><textarea id="sh-timing-belt" name="short_timing-belt" rows="2" maxlength="400">Ремень или цепь ГРМ, ролики, помпа.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_timing-belt" value="1" > Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_timing-belt" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-computer-diag">
+  <legend class="sr-only">Компьютерная диагностика</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">computer-diag</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="computer-diag:up" aria-label="Выше: Компьютерная диагностика" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="computer-diag:down" aria-label="Ниже: Компьютерная диагностика" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-computer-diag">Название <span class="cs-site">сайт</span></label><input id="n-computer-diag" name="name_computer-diag" type="text" value="Компьютерная диагностика" required maxlength="120"></div>
+    <div><label for="p-computer-diag">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-computer-diag" name="price_computer-diag" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-computer-diag">Длительность, мин</label><input id="d-computer-diag" name="dur_computer-diag" type="number" inputmode="numeric" min="30" step="30" value="60" required></div>
+    <div class="cs-span2"><label for="pn-computer-diag">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-computer-diag" name="note_computer-diag" type="text" value="" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-computer-diag">Ресурс</label>
+      <select id="r-computer-diag" name="res_computer-diag"><option value="lift" >Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" selected>Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-computer-diag">Описание <span class="cs-site">сайт</span></label><textarea id="sh-computer-diag" name="short_computer-diag" rows="2" maxlength="400">Читаем ошибки блоков, смотрим параметры двигателя, объясняем, что они значат.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_computer-diag" value="1" checked> Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_computer-diag" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-ac-service">
+  <legend class="sr-only">Кондиционер: диагностика и заправка</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">ac-service</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="ac-service:up" aria-label="Выше: Кондиционер: диагностика и заправка" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="ac-service:down" aria-label="Ниже: Кондиционер: диагностика и заправка" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-ac-service">Название <span class="cs-site">сайт</span></label><input id="n-ac-service" name="name_ac-service" type="text" value="Кондиционер: диагностика и заправка" required maxlength="120"></div>
+    <div><label for="p-ac-service">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-ac-service" name="price_ac-service" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-ac-service">Длительность, мин</label><input id="d-ac-service" name="dur_ac-service" type="number" inputmode="numeric" min="30" step="30" value="60" required></div>
+    <div class="cs-span2"><label for="pn-ac-service">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-ac-service" name="note_ac-service" type="text" value="" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-ac-service">Ресурс</label>
+      <select id="r-ac-service" name="res_ac-service"><option value="lift" selected>Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-ac-service">Описание <span class="cs-site">сайт</span></label><textarea id="sh-ac-service" name="short_ac-service" rows="2" maxlength="400">Проверка на утечки, заправка, поиск неисправности перед дорогим ремонтом.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_ac-service" value="1" checked> Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_ac-service" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-tire-fitting">
+  <legend class="sr-only">Шиномонтаж</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">tire-fitting</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="tire-fitting:up" aria-label="Выше: Шиномонтаж" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="tire-fitting:down" aria-label="Ниже: Шиномонтаж" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-tire-fitting">Название <span class="cs-site">сайт</span></label><input id="n-tire-fitting" name="name_tire-fitting" type="text" value="Шиномонтаж" required maxlength="120"></div>
+    <div><label for="p-tire-fitting">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-tire-fitting" name="price_tire-fitting" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-tire-fitting">Длительность, мин</label><input id="d-tire-fitting" name="dur_tire-fitting" type="number" inputmode="numeric" min="30" step="30" value="60" required></div>
+    <div class="cs-span2"><label for="pn-tire-fitting">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-tire-fitting" name="note_tire-fitting" type="text" value="" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-tire-fitting">Ресурс</label>
+      <select id="r-tire-fitting" name="res_tire-fitting"><option value="lift" selected>Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-tire-fitting">Описание <span class="cs-site">сайт</span></label><textarea id="sh-tire-fitting" name="short_tire-fitting" rows="2" maxlength="400">Сезонная смена, балансировка, ремонт проколов.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_tire-fitting" value="1" checked> Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_tire-fitting" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-exhaust-welding">
+  <legend class="sr-only">Сварка и выхлоп</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">exhaust-welding</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="exhaust-welding:up" aria-label="Выше: Сварка и выхлоп" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="exhaust-welding:down" aria-label="Ниже: Сварка и выхлоп" >↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-exhaust-welding">Название <span class="cs-site">сайт</span></label><input id="n-exhaust-welding" name="name_exhaust-welding" type="text" value="Сварка и выхлоп" required maxlength="120"></div>
+    <div><label for="p-exhaust-welding">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-exhaust-welding" name="price_exhaust-welding" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-exhaust-welding">Длительность, мин</label><input id="d-exhaust-welding" name="dur_exhaust-welding" type="number" inputmode="numeric" min="30" step="30" value="120" required></div>
+    <div class="cs-span2"><label for="pn-exhaust-welding">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-exhaust-welding" name="note_exhaust-welding" type="text" value="" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-exhaust-welding">Ресурс</label>
+      <select id="r-exhaust-welding" name="res_exhaust-welding"><option value="lift" selected>Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-exhaust-welding">Описание <span class="cs-site">сайт</span></label><textarea id="sh-exhaust-welding" name="short_exhaust-welding" rows="2" maxlength="400">Ремонт глушителя и выхлопной системы, сварочные работы. Запись — через осмотр.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_exhaust-welding" value="1" > Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_exhaust-welding" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<fieldset class="card cs-svc " id="svc-engine-cooling">
+  <legend class="sr-only">Двигатель и охлаждение</legend>
+  <div class="cs-svc__head">
+    <span class="small muted mono">engine-cooling</span>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="engine-cooling:up" aria-label="Выше: Двигатель и охлаждение" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="move" value="engine-cooling:down" aria-label="Ниже: Двигатель и охлаждение" disabled>↓</button>
+    </span>
+  </div>
+  <div class="cs-svc__grid">
+    <div class="cs-span2"><label for="n-engine-cooling">Название <span class="cs-site">сайт</span></label><input id="n-engine-cooling" name="name_engine-cooling" type="text" value="Двигатель и охлаждение" required maxlength="120"></div>
+    <div><label for="p-engine-cooling">Цена от, ₽ <span class="cs-site">сайт</span></label><input id="p-engine-cooling" name="price_engine-cooling" type="text" inputmode="numeric" value="" placeholder="после осмотра"></div>
+    <div><label for="d-engine-cooling">Длительность, мин</label><input id="d-engine-cooling" name="dur_engine-cooling" type="number" inputmode="numeric" min="30" step="30" value="180" required></div>
+    <div class="cs-span2"><label for="pn-engine-cooling">Пояснение к цене <span class="cs-site">сайт</span></label><input id="pn-engine-cooling" name="note_engine-cooling" type="text" value="" maxlength="120" placeholder="например: работа бесплатно при покупке масла"></div>
+    <div class="cs-span2"><label for="r-engine-cooling">Ресурс</label>
+      <select id="r-engine-cooling" name="res_engine-cooling"><option value="lift" selected>Подъёмник</option><option value="alignment" >Стенд развала</option><option value="diag" >Диагностика</option><option value="none" >Без записи</option></select></div>
+    <div class="cs-span4"><label for="sh-engine-cooling">Описание <span class="cs-site">сайт</span></label><textarea id="sh-engine-cooling" name="short_engine-cooling" rows="2" maxlength="400">Система охлаждения, сцепление, стартеры и генераторы, топливная система, форсунки.</textarea></div>
+  </div>
+  <div class="cs-checks">
+    <label class="check"><input type="checkbox" name="book_engine-cooling" value="1" > Онлайн-запись</label>
+    <label class="check"><input type="checkbox" name="show_engine-cooling" value="1" checked> Показывать на сайте и в записи</label>
+  </div>
+</fieldset>
+
+<div class="cs-savebar"><button class="btn btn--gold btn--block btn--big" type="submit">Сохранить цены и услуги</button></div>
+</form>
+
+<h2 id="add">Добавить услугу</h2>
+<form class="card" method="post" action="#demo">
+  <div class="field" style="margin-top:0"><label for="an">Название</label><input id="an" name="name" type="text" required maxlength="120"></div>
+  <div class="grid2 field">
+    <div><label for="ac">Раздел прайса</label><select id="ac" name="category"><option value="chassis">Ходовая</option><option value="alignment">Развал-схождение</option><option value="maintenance">Обслуживание</option><option value="engine">Двигатель</option><option value="diagnostics">Диагностика</option><option value="ac">Кондиционер</option><option value="tires">Шины</option><option value="exhaust">Выхлоп</option></select></div>
+    <div><label for="ar">Ресурс</label><select id="ar" name="resource"><option value="lift">Подъёмник</option><option value="alignment">Стенд развала</option><option value="diag">Диагностика</option><option value="none">Без записи</option></select></div>
+  </div>
+  <div class="grid2 field">
+    <div><label for="ad">Длительность, мин</label><input id="ad" name="duration" type="number" inputmode="numeric" min="30" step="30" value="60" required></div>
+    <div><label for="ap">Цена от, ₽</label><input id="ap" name="price" type="text" inputmode="numeric" placeholder="после осмотра"></div>
+  </div>
+  <label class="check"><input type="checkbox" name="bookable" value="1"> Онлайн-запись</label>
+  <p class="small muted">Код для сайта и истории создаётся из названия латиницей и больше не меняется.</p>
+  <button class="btn btn--block" type="submit" style="margin-top:10px">Добавить услугу</button>
+</form>
+
+<h2>Сайт</h2>
+<form class="card" method="post" action="#demo">
+  <p class="small">Прайс на сайте обновится после пересборки сайта (команда сборки не настроена).</p>
+  <button class="btn btn--block" type="submit" style="margin-top:8px">Обновить сайт</button>
+</form>
+</div>
+
+</main>
+
+<script src="../static/m.js" defer></script>
+
+<div class="demo-bar" role="note">Демонстрация на тестовых данных. Ничего не сохраняется — <a href="../index.html">все экраны</a></div>
+<style>body{padding-top:40px}.demo-bar{position:fixed;top:0;left:0;right:0;z-index:99;background:#cba55b;color:#15120e;font:600 14px/1.35 Onest,system-ui,sans-serif;padding:8px 14px;text-align:center}
+.demo-bar a{color:inherit}.demo-toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:100;background:#15120e;color:#f1ebdf;border:1px solid #cba55b;border-radius:10px;padding:12px 16px;font:500 15px/1.4 Onest,system-ui,sans-serif;max-width:90vw}
+.demo-picked{outline:3px solid #cba55b;outline-offset:2px}</style>
+<script>
+(function(){
+  function toast(t){var d=document.createElement('div');d.className='demo-toast';d.textContent=t;document.body.appendChild(d);setTimeout(function(){d.remove()},2600);}
+  document.addEventListener('submit',function(e){e.preventDefault();var b=e.submitter;
+    if(b&&location.pathname.indexOf('/r/')>-1){var row=b.closest('form');if(row){row.querySelectorAll('button').forEach(function(x){x.classList.remove('demo-picked')});}b.classList.add('demo-picked');toast('В настоящей системе ваш выбор «'+b.textContent.trim()+'» сохранится, и мастер его увидит.');}
+    else toast('Демо: в настоящей системе действие сохранится.');},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[href="#demo"]');if(a){e.preventDefault();toast('Этот экран в демо не сохранён.');}},true);
+})();
+</script>
+</body>
+</html>

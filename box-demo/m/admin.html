@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#0d0b09">
-<title>Админ · Sin Auto</title>
+<title>Дела · Sin Auto</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@600;800&display=swap" rel="stylesheet">
@@ -23,8 +23,11 @@
     <nav class="nav" aria-label="Разделы">
       <a href="../m/today.html" >Сегодня</a>
       
-      <a href="../m/admin.html" aria-current="page">Админ</a>
+      <a href="../m/admin.html" aria-current="page">Дела <span class="nav__badge" aria-label="6 ждут">6</span></a>
+      <a href="../m/clients.html" >Клиенты</a>
+      <a href="../m/mail-queue.html" >Рассылки</a>
       <a href="../m/stats.html" >Сводка</a>
+      <a href="../m/settings.html" >Настройки</a>
       
       <form method="post" action="#demo"><button type="submit">Выйти</button></form>
     </nav>
@@ -33,7 +36,7 @@
 </header>
 <main class="page">
 
-<h1>Админ</h1>
+<h1>Дела</h1>
 
 
 
@@ -41,9 +44,9 @@
 
 
 <div class="card">
-  <div class="row row--between small muted"><span>Сегодня 15:02</span><span class="badge">позвонить</span></div>
+  <div class="row row--between small muted"><span>Сегодня 16:14</span><span class="badge">позвонить</span></div>
   <p style="white-space:pre-line;margin:6px 0">Осмотр К404КК102 готов. Нашли: срочно — 1, можно позже — 2.
-Отчёт с фото и сметой: http://localhost:8765/r/2K5mP_6gCvdH6A4AfxrwlehgbNb3QNzM
+Отчёт с фото и сметой: http://localhost:8765/r/ASv8RCv701Ctd20mbYDzUx5Sg_FttOie
 Отметьте, что делаем сейчас, а что позже.</p>
   <p class="small">Олег · <a href="tel:+79000000004">+79000000004</a></p>
   <form method="post" action="#demo"><button class="btn btn--block" type="submit">Сделано</button></form>
@@ -51,7 +54,7 @@
 
 
 <div class="card">
-  <div class="row row--between small muted"><span>Сегодня 15:02</span><span class="badge">сообщение</span></div>
+  <div class="row row--between small muted"><span>Сегодня 16:14</span><span class="badge">сообщение</span></div>
   <p style="white-space:pre-line;margin:6px 0">Клиент ответил по смете М505ММ102: согласовано 2 поз. на 9 300 ₽, отложено 0.</p>
   
   <form method="post" action="#demo"><button class="btn btn--block" type="submit">Сделано</button></form>
@@ -59,7 +62,7 @@
 
 
 <div class="card">
-  <div class="row row--between small muted"><span>Сегодня 15:02</span><span class="badge">сообщение</span></div>
+  <div class="row row--between small muted"><span>Сегодня 16:14</span><span class="badge">сообщение</span></div>
   <p style="white-space:pre-line;margin:6px 0">Клиент ответил по смете Н606НН102: согласовано 2 поз. на 4 175 ₽, отложено 0.</p>
   
   <form method="post" action="#demo"><button class="btn btn--block" type="submit">Сделано</button></form>
@@ -67,7 +70,7 @@
 
 
 <div class="card">
-  <div class="row row--between small muted"><span>Сегодня 15:02</span><span class="badge">позвонить</span></div>
+  <div class="row row--between small muted"><span>Сегодня 16:14</span><span class="badge">позвонить</span></div>
   <p style="white-space:pre-line;margin:6px 0">Машина Н606НН102 готова, можно забирать. К оплате: 4 175 ₽. Работаем до 20:00.</p>
   <p class="small">Светлана · <a href="tel:+79000000006">+79000000006</a></p>
   <form method="post" action="#demo"><button class="btn btn--block" type="submit">Сделано</button></form>
@@ -75,7 +78,7 @@
 
 
 <div class="card">
-  <div class="row row--between small muted"><span>Сегодня 15:02</span><span class="badge">сообщение</span></div>
+  <div class="row row--between small muted"><span>Сегодня 16:14</span><span class="badge">сообщение</span></div>
   <p style="white-space:pre-line;margin:6px 0">Клиент ответил по смете О707ОО102: согласовано 1 поз. на 1 800 ₽, отложено 1.</p>
   
   <form method="post" action="#demo"><button class="btn btn--block" type="submit">Сделано</button></form>
@@ -83,7 +86,7 @@
 
 
 <div class="card">
-  <div class="row row--between small muted"><span>Сегодня 15:02</span><span class="badge">сообщение</span></div>
+  <div class="row row--between small muted"><span>Сегодня 16:14</span><span class="badge">сообщение</span></div>
   <p style="white-space:pre-line;margin:6px 0">Сводка за неделю 09.11–15.11
 Машин: 1 (визитов 1)
 Средний чек по согласованному: 1 800 ₽
@@ -96,10 +99,6 @@
 </div>
 
 
-<h2 id="approvals">Приглашения на проверку</h2>
-<p class="small muted">Это реклама: по закону её нельзя рассылать автоматически, отправка только по нажатию. Клиенты дали согласие на рекламу и не были у нас полгода.</p>
-
-<p class="empty">Пусто.</p>
 
 
 <h2 id="book">Ручная запись</h2>
@@ -113,13 +112,14 @@
     <div><label for="mt">Время</label><select id="mt" name="time" required data-slots="/m/admin/slots"><option value="">—</option></select></div>
   </div>
   <p class="small muted js-slots-note" role="status" aria-live="polite"></p>
-  <div class="field"><label for="mn">Имя</label><input id="mn" name="name" type="text" required></div>
-  <div class="field"><label for="mp">Телефон</label><input id="mp" name="phone" type="tel" inputmode="tel" required></div>
+  
+  <div class="field"><label for="mn">Имя</label><input id="mn" name="name" type="text" value="" required></div>
+  <div class="field"><label for="mp">Телефон</label><input id="mp" name="phone" type="tel" inputmode="tel" value="" required></div>
   <div class="grid2 field">
-    <div><label for="mpl">Госномер</label><input id="mpl" name="plate" type="text" autocapitalize="characters"></div>
-    <div><label for="mc">Машина</label><input id="mc" name="car" type="text"></div>
+    <div><label for="mpl">Госномер</label><input id="mpl" name="plate" type="text" autocapitalize="characters" value=""></div>
+    <div><label for="mc">Машина</label><input id="mc" name="car" type="text" value=""></div>
   </div>
-  <div class="field"><label for="mcm">Комментарий</label><input id="mcm" name="comment" type="text"></div>
+  <div class="field"><label for="mcm">Комментарий</label><input id="mcm" name="comment" type="text" value=""></div>
   <div class="field"><label for="msrc">Откуда</label><select id="msrc" name="source"><option value="phone">Звонок</option><option value="admin">Пришёл сам / другое</option></select></div>
   <button class="btn btn--gold btn--block btn--big" type="submit" style="margin-top:12px">Записать</button>
 </form>
@@ -128,7 +128,7 @@
 <h2>Ближайшие записи</h2>
 
 <div class="card">
-  <div class="row row--between"><strong>Сегодня 16:30</strong><span class="badge">подтверждена</span></div>
+  <div class="row row--between"><strong>Сегодня 17:30</strong><span class="badge">подтверждена</span></div>
   <div class="small">Замена масла и фильтров · Тимур · <a href="tel:+79000000003">+79000000003</a> · телефон</div>
   <form method="post" action="#demo" data-confirm="Отменить запись?" style="margin-top:8px"><input type="hidden" name="status" value="cancelled"><button class="btn btn--danger btn--block" type="submit">Отменить</button></form>
 </div>
@@ -146,49 +146,6 @@
 </div>
 
 
-<h2 id="staff">Сотрудники</h2>
-
-<div class="card">
-  <div class="row row--between"><strong>Администратор</strong><span class="badge badge--green">админ</span></div>
-  <div class="grid2" style="margin-top:8px">
-    <form method="post" action="#demo"><input type="hidden" name="action" value="toggle"><button class="btn btn--block" type="submit">Отключить</button></form>
-    <form method="post" action="#demo" class="row"><input type="hidden" name="action" value="pin"><input name="pin" type="password" inputmode="numeric" placeholder="новый PIN" aria-label="Новый PIN для Администратор" class="grow" style="width:auto"><button class="btn" type="submit">OK</button></form>
-  </div>
-</div>
-
-<div class="card">
-  <div class="row row--between"><strong>Ильдар</strong><span class="badge badge--green">мастер</span></div>
-  <div class="grid2" style="margin-top:8px">
-    <form method="post" action="#demo"><input type="hidden" name="action" value="toggle"><button class="btn btn--block" type="submit">Отключить</button></form>
-    <form method="post" action="#demo" class="row"><input type="hidden" name="action" value="pin"><input name="pin" type="password" inputmode="numeric" placeholder="новый PIN" aria-label="Новый PIN для Ильдар" class="grow" style="width:auto"><button class="btn" type="submit">OK</button></form>
-  </div>
-</div>
-
-<div class="card">
-  <div class="row row--between"><strong>Руслан</strong><span class="badge badge--green">мастер</span></div>
-  <div class="grid2" style="margin-top:8px">
-    <form method="post" action="#demo"><input type="hidden" name="action" value="toggle"><button class="btn btn--block" type="submit">Отключить</button></form>
-    <form method="post" action="#demo" class="row"><input type="hidden" name="action" value="pin"><input name="pin" type="password" inputmode="numeric" placeholder="новый PIN" aria-label="Новый PIN для Руслан" class="grow" style="width:auto"><button class="btn" type="submit">OK</button></form>
-  </div>
-</div>
-
-<div class="card">
-  <div class="row row--between"><strong>Фёдор</strong><span class="badge badge--green">мастер</span></div>
-  <div class="grid2" style="margin-top:8px">
-    <form method="post" action="#demo"><input type="hidden" name="action" value="toggle"><button class="btn btn--block" type="submit">Отключить</button></form>
-    <form method="post" action="#demo" class="row"><input type="hidden" name="action" value="pin"><input name="pin" type="password" inputmode="numeric" placeholder="новый PIN" aria-label="Новый PIN для Фёдор" class="grow" style="width:auto"><button class="btn" type="submit">OK</button></form>
-  </div>
-</div>
-
-<form method="post" action="#demo" class="card" style="margin-top:10px">
-  <h3>Добавить</h3>
-  <div class="field"><label for="sn">Имя</label><input id="sn" name="name" type="text" required></div>
-  <div class="grid2 field">
-    <div><label for="sr">Роль</label><select id="sr" name="role"><option value="master">Мастер</option><option value="admin">Админ</option></select></div>
-    <div><label for="sp">PIN</label><input id="sp" name="pin" type="password" inputmode="numeric" minlength="4" maxlength="8" required></div>
-  </div>
-  <button class="btn btn--block" type="submit" style="margin-top:10px">Добавить</button>
-</form>
 
 </main>
 

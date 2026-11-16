@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0d0b09">
+<title>Сервис · Sin Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/box.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 32'%3E%3Cpath d='M14 1.5 26.5 8.75v14.5L14 30.5 1.5 23.25V8.75Z' fill='%23100e0c' stroke='%23cba55b' stroke-width='2.5'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="top__in">
+    <a class="brand" href="../m/today.html">Бокс <b>·</b></a>
+    
+    <nav class="nav" aria-label="Разделы">
+      <a href="../m/today.html" >Сегодня</a>
+      
+      <a href="../m/admin.html" >Дела <span class="nav__badge" aria-label="6 ждут">6</span></a>
+      <a href="../m/clients.html" >Клиенты</a>
+      <a href="../m/mail-queue.html" >Рассылки</a>
+      <a href="../m/stats.html" >Сводка</a>
+      <a href="../m/settings.html" aria-current="page">Настройки</a>
+      
+      <form method="post" action="#demo"><button type="submit">Выйти</button></form>
+    </nav>
+    
+  </div>
+</header>
+<main class="page">
+
+<div class="cs-wide">
+<p class="small" style="margin-top:14px"><a href="../m/settings.html">← Настройки</a></p>
+<nav class="chips cs-chips" aria-label="Разделы настроек">
+  
+  <a class="chip cs-chip" href="../m/settings-services.html" >Услуги и цены</a>
+  
+  <a class="chip cs-chip" href="../m/settings-hours.html" >Часы работы</a>
+  
+  <a class="chip cs-chip" href="../m/settings-capacity.html" >Ёмкость и запись</a>
+  
+  <a class="chip cs-chip" href="../m/settings-shop.html" aria-current="page">Сервис</a>
+  
+  <a class="chip cs-chip" href="../m/settings-checklist.html" >Чек-лист осмотра</a>
+  
+  <a class="chip cs-chip" href="../m/settings.html#staff" >Сотрудники</a>
+  
+  <a class="chip cs-chip" href="../m/settings-audit.html" >Журнал</a>
+  
+</nav>
+
+
+<script>
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('button[data-confirm]');
+  if (b && !confirm(b.getAttribute('data-confirm'))) e.preventDefault();
+});
+</script>
+<h1>Сервис</h1>
+<p class="small muted">Поля с меткой <span class="cs-site">сайт</span> выводятся на сайте после пересборки. Пустое поле на сайте не показывается.</p>
+<form method="post" action="#demo">
+  <div class="cs-cols">
+  
+  <fieldset class="card cs-group">
+    <legend class="cs-legend">Контакты</legend>
+    
+    <div class="field">
+      <label for="s-1-name">Название <span class="cs-site">сайт</span></label>
+      
+      <input id="s-1-name" name="name" value="Sin Auto"
+        type="text"
+        
+        required>
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-2-phone">Телефон <span class="cs-site">сайт</span></label>
+      
+      <input id="s-2-phone" name="phone" value="+79931339336"
+        type="tel"
+        
+        required>
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-3-phone_display">Телефон, как писать на сайте <span class="cs-site">сайт</span></label>
+      
+      <input id="s-3-phone_display" name="phone_display" value="+7 993 133-93-36"
+        type="text"
+        
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-4-city">Город <span class="cs-site">сайт</span></label>
+      
+      <input id="s-4-city" name="city" value="Уфа"
+        type="text"
+        
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-5-address">Адрес <span class="cs-site">сайт</span></label>
+      
+      <input id="s-5-address" name="address" value="ул. Трамвайная, 15/4"
+        type="text"
+        
+        required>
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-6-address_hint">Как найти <span class="cs-site">сайт</span></label>
+      
+      <input id="s-6-address_hint" name="address_hint" value="рядом с рынком «Радуга»"
+        type="text"
+        
+        >
+      
+    </div>
+    
+  </fieldset>
+  
+  <fieldset class="card cs-group">
+    <legend class="cs-legend">Ссылки</legend>
+    
+    <div class="field">
+      <label for="s-1-links.telegram_channel">Канал в Telegram <span class="cs-site">сайт</span></label>
+      
+      <input id="s-1-links.telegram_channel" name="links.telegram_channel" value="https://t.me/sin_auto_ufa"
+        type="url"
+        
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-2-links.telegram_chat">Чат в Telegram <span class="cs-site">сайт</span></label>
+      
+      <input id="s-2-links.telegram_chat" name="links.telegram_chat" value="https://t.me/+79931339336"
+        type="url"
+        
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-3-links.max_channel">Канал в MAX <span class="cs-site">сайт</span></label>
+      
+      <input id="s-3-links.max_channel" name="links.max_channel" value="https://max.ru/join/L_ayvmQI2OdxSNidgHAz-u__Pc0MPJRBcTtQWZYApys"
+        type="url"
+        
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-4-links.yandex_maps">Яндекс Карты <span class="cs-site">сайт</span></label>
+      
+      <input id="s-4-links.yandex_maps" name="links.yandex_maps" value="https://yandex.ru/maps/org/sin_avto/22664543317/"
+        type="url"
+        
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-5-links.yandex_reviews">Отзывы в Яндексе <span class="cs-site">сайт</span></label>
+      
+      <input id="s-5-links.yandex_reviews" name="links.yandex_reviews" value="https://yandex.ru/maps/org/sin_avto/22664543317/reviews/"
+        type="url"
+        
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-6-links.twogis">2ГИС <span class="cs-site">сайт</span></label>
+      
+      <input id="s-6-links.twogis" name="links.twogis" value="https://2gis.ru/ufa/firm/70000001102839274"
+        type="url"
+        
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-7-links.twogis_reviews">Отзывы в 2ГИС <span class="cs-site">сайт</span></label>
+      
+      <input id="s-7-links.twogis_reviews" name="links.twogis_reviews" value="https://2gis.ru/ufa/firm/70000001102839274/tab/reviews"
+        type="url"
+        
+        >
+      
+    </div>
+    
+  </fieldset>
+  
+  <fieldset class="card cs-group">
+    <legend class="cs-legend">Гарантия и цены</legend>
+    
+    <div class="field">
+      <label for="s-1-warranty.works_months">Гарантия на работы, мес. <span class="cs-site">сайт</span></label>
+      
+      <input id="s-1-warranty.works_months" name="warranty.works_months" value=""
+        type="text"
+        inputmode="numeric"
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-2-warranty.parts_months">Гарантия на запчасти, мес. <span class="cs-site">сайт</span></label>
+      
+      <input id="s-2-warranty.parts_months" name="warranty.parts_months" value=""
+        type="text"
+        inputmode="numeric"
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-3-warranty.text">Текст о гарантии <span class="cs-site">сайт</span></label>
+      
+      <textarea id="s-3-warranty.text" name="warranty.text" rows="3" maxlength="1000"></textarea>
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-4-labor_hour_rub">Нормо-час, ₽ <span class="cs-site">сайт</span></label>
+      
+      <input id="s-4-labor_hour_rub" name="labor_hour_rub" value=""
+        type="text"
+        inputmode="numeric"
+        >
+      
+    </div>
+    
+  </fieldset>
+  
+  <fieldset class="card cs-group">
+    <legend class="cs-legend">Реквизиты</legend>
+    
+    <div class="field">
+      <label for="s-1-legal.form">Форма (ИП, ООО) <span class="cs-site">сайт</span></label>
+      
+      <input id="s-1-legal.form" name="legal.form" value=""
+        type="text"
+        
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-2-legal.full_name">Полное наименование <span class="cs-site">сайт</span></label>
+      
+      <input id="s-2-legal.full_name" name="legal.full_name" value=""
+        type="text"
+        
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-3-legal.inn">ИНН <span class="cs-site">сайт</span></label>
+      
+      <input id="s-3-legal.inn" name="legal.inn" value=""
+        type="text"
+        inputmode="numeric"
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-4-legal.ogrn">ОГРН / ОГРНИП <span class="cs-site">сайт</span></label>
+      
+      <input id="s-4-legal.ogrn" name="legal.ogrn" value=""
+        type="text"
+        inputmode="numeric"
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-5-legal.legal_address">Юридический адрес <span class="cs-site">сайт</span></label>
+      
+      <input id="s-5-legal.legal_address" name="legal.legal_address" value=""
+        type="text"
+        
+        >
+      
+    </div>
+    
+    <div class="field">
+      <label for="s-6-legal.rospotrebnadzor">Роспотребнадзор <span class="cs-site">сайт</span></label>
+      
+      <input id="s-6-legal.rospotrebnadzor" name="legal.rospotrebnadzor" value="Управление Роспотребнадзора по Республике Башкортостан"
+        type="text"
+        
+        >
+      
+    </div>
+    
+  </fieldset>
+  
+  </div>
+  <div class="cs-savebar"><button class="btn btn--gold btn--block btn--big" type="submit">Сохранить</button></div>
+</form>
+</div>
+
+</main>
+
+<script src="../static/m.js" defer></script>
+
+<div class="demo-bar" role="note">Демонстрация на тестовых данных. Ничего не сохраняется — <a href="../index.html">все экраны</a></div>
+<style>body{padding-top:40px}.demo-bar{position:fixed;top:0;left:0;right:0;z-index:99;background:#cba55b;color:#15120e;font:600 14px/1.35 Onest,system-ui,sans-serif;padding:8px 14px;text-align:center}
+.demo-bar a{color:inherit}.demo-toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:100;background:#15120e;color:#f1ebdf;border:1px solid #cba55b;border-radius:10px;padding:12px 16px;font:500 15px/1.4 Onest,system-ui,sans-serif;max-width:90vw}
+.demo-picked{outline:3px solid #cba55b;outline-offset:2px}</style>
+<script>
+(function(){
+  function toast(t){var d=document.createElement('div');d.className='demo-toast';d.textContent=t;document.body.appendChild(d);setTimeout(function(){d.remove()},2600);}
+  document.addEventListener('submit',function(e){e.preventDefault();var b=e.submitter;
+    if(b&&location.pathname.indexOf('/r/')>-1){var row=b.closest('form');if(row){row.querySelectorAll('button').forEach(function(x){x.classList.remove('demo-picked')});}b.classList.add('demo-picked');toast('В настоящей системе ваш выбор «'+b.textContent.trim()+'» сохранится, и мастер его увидит.');}
+    else toast('Демо: в настоящей системе действие сохранится.');},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[href="#demo"]');if(a){e.preventDefault();toast('Этот экран в демо не сохранён.');}},true);
+})();
+</script>
+</body>
+</html>

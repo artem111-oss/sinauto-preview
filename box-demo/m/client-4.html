@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0d0b09">
+<title>Олег · Sin Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/box.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 32'%3E%3Cpath d='M14 1.5 26.5 8.75v14.5L14 30.5 1.5 23.25V8.75Z' fill='%23100e0c' stroke='%23cba55b' stroke-width='2.5'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="top__in">
+    <a class="brand" href="../m/today.html">Бокс <b>·</b></a>
+    
+    <nav class="nav" aria-label="Разделы">
+      <a href="../m/today.html" >Сегодня</a>
+      
+      <a href="../m/admin.html" >Дела <span class="nav__badge" aria-label="6 ждут">6</span></a>
+      <a href="../m/clients.html" aria-current="page">Клиенты</a>
+      <a href="../m/mail-queue.html" >Рассылки</a>
+      <a href="../m/stats.html" >Сводка</a>
+      <a href="../m/settings.html" >Настройки</a>
+      
+      <form method="post" action="#demo"><button type="submit">Выйти</button></form>
+    </nav>
+    
+  </div>
+</header>
+<main class="page">
+
+<div class="cs-wide">
+<p class="small" style="margin-top:14px"><a href="../m/clients.html">← Все клиенты</a></p>
+<h1>Олег</h1>
+<p class="row small"><a href="tel:+79000000004">+7 900 000-00-04</a>
+  
+  
+  <span class="badge">нет мессенджера — звонок</span>
+  <span class="muted">клиент с 16.11.2026</span>
+</p>
+
+
+
+<p style="margin-top:12px"><a class="btn btn--gold btn--block btn--big" href="../m/admin.html#book">Записать</a></p>
+
+<div class="cs-cols">
+<div class="cs-col">
+
+<h2 id="contact">Контакты</h2>
+<form class="card" method="post" action="#demo">
+  <div class="field" style="margin-top:0"><label for="cn">Имя</label><input id="cn" name="name" type="text" value="Олег" maxlength="80" required></div>
+  <div class="field"><label for="cp">Телефон</label><input id="cp" name="phone" type="tel" inputmode="tel" value="+79000000004" required></div>
+  <button class="btn btn--block" type="submit" style="margin-top:12px">Сохранить контакты</button>
+</form>
+
+<h2 id="prefs">Связь</h2>
+<div class="card stack">
+  <div class="row row--between"><span>Telegram</span><span class="badge ">не привязан</span></div>
+  <div class="cs-pref">
+    <div><strong>Напоминания</strong><div class="small muted">масло, отложенные работы, шины</div></div>
+    <form method="post" action="#demo">
+      <input type="hidden" name="what" value="reminders"><input type="hidden" name="value" value="off">
+      <span class="badge badge--green">включены</span>
+      <button class="btn" type="submit">Выключить</button>
+    </form>
+  </div>
+  <div class="cs-pref">
+    <div><strong>Смена шин</strong><div class="small muted">весной и осенью</div></div>
+    <form method="post" action="#demo">
+      <input type="hidden" name="what" value="tires"><input type="hidden" name="value" value="on">
+      <span class="badge ">выключены</span>
+      <button class="btn" type="submit">Включить</button>
+    </form>
+  </div>
+  <p class="small muted">Меняйте только по просьбе клиента — изменение попадёт в журнал.</p>
+  <hr style="margin:6px 0">
+  <div>
+    <strong>Реклама</strong>
+    
+    <p class="small muted">Согласия нет. Дать его может только сам клиент — на сайте или в боте.</p>
+    
+  </div>
+</div>
+
+<h2 id="cars">Машины</h2>
+
+<form class="card" id="car-4" method="post" action="#demo">
+  <div class="grid2">
+    <div><label for="vp4">Госномер</label><input id="vp4" name="plate" type="text" value="К404КК102" autocapitalize="characters" class="plate"></div>
+    <div><label for="vm4">Пробег, км</label><input id="vm4" name="mileage" type="text" inputmode="numeric" value="148500"></div>
+  </div>
+  <div class="grid2 field">
+    <div><label for="vk4">Марка</label><input id="vk4" name="make" type="text" value="Renault"></div>
+    <div><label for="vo4">Модель</label><input id="vo4" name="model" type="text" value="Logan"></div>
+  </div>
+  <div class="cs-vin field">
+    <div><label for="vv4">VIN</label><input id="vv4" name="vin" type="text" value="" maxlength="17" autocapitalize="characters" class="mono"></div>
+    <div><label for="vy4">Год</label><input id="vy4" name="year" type="text" inputmode="numeric" value="" maxlength="4"></div>
+  </div>
+  <div class="btns" style="margin-top:12px">
+    <button class="btn" type="submit">Сохранить</button>
+    <a class="btn btn--ghost" href="../m/admin.html#book">Записать эту машину</a>
+  </div>
+</form>
+
+<details class="card cs-add">
+  <summary>Добавить машину</summary>
+  <form method="post" action="#demo">
+    <div class="grid2">
+      <div><label for="np">Госномер</label><input id="np" name="plate" type="text" autocapitalize="characters"></div>
+      <div><label for="nm">Пробег, км</label><input id="nm" name="mileage" type="text" inputmode="numeric"></div>
+    </div>
+    <div class="grid2 field">
+      <div><label for="nk">Марка</label><input id="nk" name="make" type="text"></div>
+      <div><label for="no">Модель</label><input id="no" name="model" type="text"></div>
+    </div>
+    <div class="cs-vin field">
+      <div><label for="nv">VIN</label><input id="nv" name="vin" type="text" maxlength="17" autocapitalize="characters"></div>
+      <div><label for="ny">Год</label><input id="ny" name="year" type="text" inputmode="numeric" maxlength="4"></div>
+    </div>
+    <button class="btn btn--block" type="submit" style="margin-top:12px">Добавить</button>
+  </form>
+</details>
+
+</div>
+<div class="cs-col">
+
+<h2 id="bookings">Записи</h2>
+
+<div class="card">
+  <div class="row row--between"><strong>Сегодня 16:30</strong><span class="badge ">приехал</span></div>
+  <div class="small">Тормозная система · <span class="plate">К404КК102</span> · телефон</div>
+</div>
+
+
+
+<h2 id="deferred">Отложенные работы</h2>
+
+<p class="empty">Нет.</p>
+
+
+<h2 id="visits">Визиты</h2>
+
+<div class="card">
+  <div class="row row--between">
+    <strong>16.11.2026 · <span class="plate">К404КК102</span></strong>
+    <span class="badge badge--gold">Ждём согласования</span>
+  </div>
+  <div class="small muted">Согласовано 0 ₽ · 148 500 км</div>
+  <div class="btns" style="margin-top:8px">
+    <a class="btn" href="../m/visit-awaiting_approval.html">Карточка визита</a>
+    <a class="btn btn--ghost" href="http://localhost:8765/r/ASv8RCv701Ctd20mbYDzUx5Sg_FttOie" target="_blank" rel="noopener">Отчёт клиента</a>
+  </div>
+</div>
+
+
+<h2 id="messages">Сообщения</h2>
+<h3 class="muted" style="margin:6px 0">Запланировано</h3>
+
+<p class="empty">Ничего не запланировано.</p>
+
+<h3 class="muted" style="margin:14px 0 6px">Было</h3>
+
+<div class="cs-line">
+  <div class="grow">
+    <div class="small"><strong>Отчёт и смета</strong> · <span class="mono">Сегодня 16:14</span></div>
+    <div class="small muted">отправлено администратору: позвонить</div>
+  </div>
+</div>
+
+<div class="cs-line">
+  <div class="grow">
+    <div class="small"><strong>Машина принята</strong> · <span class="mono">Сегодня 16:14</span></div>
+    <div class="small muted">не отправлено: сообщение стало ненужным</div>
+  </div>
+</div>
+
+
+<h2 id="consents">Журнал согласий</h2>
+
+<p class="empty">Записей нет.</p>
+
+<p class="small muted" style="margin-top:6px">Только чтение. Версия текста согласия хранится в каждой записи.</p>
+
+</div>
+</div>
+</div>
+
+</main>
+
+<script src="../static/m.js" defer></script>
+
+<div class="demo-bar" role="note">Демонстрация на тестовых данных. Ничего не сохраняется — <a href="../index.html">все экраны</a></div>
+<style>body{padding-top:40px}.demo-bar{position:fixed;top:0;left:0;right:0;z-index:99;background:#cba55b;color:#15120e;font:600 14px/1.35 Onest,system-ui,sans-serif;padding:8px 14px;text-align:center}
+.demo-bar a{color:inherit}.demo-toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:100;background:#15120e;color:#f1ebdf;border:1px solid #cba55b;border-radius:10px;padding:12px 16px;font:500 15px/1.4 Onest,system-ui,sans-serif;max-width:90vw}
+.demo-picked{outline:3px solid #cba55b;outline-offset:2px}</style>
+<script>
+(function(){
+  function toast(t){var d=document.createElement('div');d.className='demo-toast';d.textContent=t;document.body.appendChild(d);setTimeout(function(){d.remove()},2600);}
+  document.addEventListener('submit',function(e){e.preventDefault();var b=e.submitter;
+    if(b&&location.pathname.indexOf('/r/')>-1){var row=b.closest('form');if(row){row.querySelectorAll('button').forEach(function(x){x.classList.remove('demo-picked')});}b.classList.add('demo-picked');toast('В настоящей системе ваш выбор «'+b.textContent.trim()+'» сохранится, и мастер его увидит.');}
+    else toast('Демо: в настоящей системе действие сохранится.');},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[href="#demo"]');if(a){e.preventDefault();toast('Этот экран в демо не сохранён.');}},true);
+})();
+</script>
+</body>
+</html>

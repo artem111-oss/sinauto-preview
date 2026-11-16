@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0d0b09">
+<title>Чек-лист осмотра · Sin Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/box.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 32'%3E%3Cpath d='M14 1.5 26.5 8.75v14.5L14 30.5 1.5 23.25V8.75Z' fill='%23100e0c' stroke='%23cba55b' stroke-width='2.5'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="top__in">
+    <a class="brand" href="../m/today.html">Бокс <b>·</b></a>
+    
+    <nav class="nav" aria-label="Разделы">
+      <a href="../m/today.html" >Сегодня</a>
+      
+      <a href="../m/admin.html" >Дела <span class="nav__badge" aria-label="6 ждут">6</span></a>
+      <a href="../m/clients.html" >Клиенты</a>
+      <a href="../m/mail-queue.html" >Рассылки</a>
+      <a href="../m/stats.html" >Сводка</a>
+      <a href="../m/settings.html" aria-current="page">Настройки</a>
+      
+      <form method="post" action="#demo"><button type="submit">Выйти</button></form>
+    </nav>
+    
+  </div>
+</header>
+<main class="page">
+
+<div class="cs-wide">
+<p class="small" style="margin-top:14px"><a href="../m/settings.html">← Настройки</a></p>
+<nav class="chips cs-chips" aria-label="Разделы настроек">
+  
+  <a class="chip cs-chip" href="../m/settings-services.html" >Услуги и цены</a>
+  
+  <a class="chip cs-chip" href="../m/settings-hours.html" >Часы работы</a>
+  
+  <a class="chip cs-chip" href="../m/settings-capacity.html" >Ёмкость и запись</a>
+  
+  <a class="chip cs-chip" href="../m/settings-shop.html" >Сервис</a>
+  
+  <a class="chip cs-chip" href="../m/settings-checklist.html" aria-current="page">Чек-лист осмотра</a>
+  
+  <a class="chip cs-chip" href="../m/settings.html#staff" >Сотрудники</a>
+  
+  <a class="chip cs-chip" href="../m/settings-audit.html" >Журнал</a>
+  
+</nav>
+
+
+<script>
+document.addEventListener('click', function (e) {
+  var b = e.target.closest && e.target.closest('button[data-confirm]');
+  if (b && !confirm(b.getAttribute('data-confirm'))) e.preventDefault();
+});
+</script>
+<h1>Чек-лист осмотра</h1>
+<p class="small muted">Порядок групп — порядок обхода машины на подъёмнике. Ключ пункта (серым) не меняется: по нему старые осмотры
+  и сметы находят свои пункты. Убранный пункт пропадёт из новых осмотров, старые отчёты его сохранят.</p>
+<form method="post" action="#demo">
+<button type="submit" name="op" value="save" class="sr-only" tabindex="-1" aria-hidden="true">Сохранить</button>
+<div class="cs-cols">
+
+<fieldset class="card cs-group" id="g-front">
+  <legend class="sr-only">Передняя подвеска</legend>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="g-front-n">Группа <span class="mono">front</span></label>
+      <input id="g-front-n" name="g_front" type="text" value="Передняя подвеска" maxlength="80" required></div>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gup:front" aria-label="Группа выше" disabled>↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gdown:front" aria-label="Группа ниже" >↓</button>
+    </span>
+  </div>
+  <ol class="cs-items">
+  
+    <li class="cs-ckrow" id="i-front-struts">
+      <div class="grow"><label for="i-front-struts-n" class="mono">front-struts</label>
+        <input id="i-front-struts-n" name="i_front-struts" type="text" value="Стойки и амортизаторы" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:front-struts" aria-label="Выше: Стойки и амортизаторы" disabled>↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:front-struts" aria-label="Ниже: Стойки и амортизаторы" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:front-struts" aria-label="Убрать: Стойки и амортизаторы" data-confirm="Убрать пункт «Стойки и амортизаторы» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-front-arms">
+      <div class="grow"><label for="i-front-arms-n" class="mono">front-arms</label>
+        <input id="i-front-arms-n" name="i_front-arms" type="text" value="Рычаги и сайлентблоки" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:front-arms" aria-label="Выше: Рычаги и сайлентблоки" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:front-arms" aria-label="Ниже: Рычаги и сайлентблоки" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:front-arms" aria-label="Убрать: Рычаги и сайлентблоки" data-confirm="Убрать пункт «Рычаги и сайлентблоки» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-ball-joints">
+      <div class="grow"><label for="i-ball-joints-n" class="mono">ball-joints</label>
+        <input id="i-ball-joints-n" name="i_ball-joints" type="text" value="Шаровые опоры" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:ball-joints" aria-label="Выше: Шаровые опоры" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:ball-joints" aria-label="Ниже: Шаровые опоры" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:ball-joints" aria-label="Убрать: Шаровые опоры" data-confirm="Убрать пункт «Шаровые опоры» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-stab-links">
+      <div class="grow"><label for="i-stab-links-n" class="mono">stab-links</label>
+        <input id="i-stab-links-n" name="i_stab-links" type="text" value="Стойки и втулки стабилизатора" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:stab-links" aria-label="Выше: Стойки и втулки стабилизатора" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:stab-links" aria-label="Ниже: Стойки и втулки стабилизатора" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:stab-links" aria-label="Убрать: Стойки и втулки стабилизатора" data-confirm="Убрать пункт «Стойки и втулки стабилизатора» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-cv-boots">
+      <div class="grow"><label for="i-cv-boots-n" class="mono">cv-boots</label>
+        <input id="i-cv-boots-n" name="i_cv-boots" type="text" value="ШРУСы и пыльники" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:cv-boots" aria-label="Выше: ШРУСы и пыльники" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:cv-boots" aria-label="Ниже: ШРУСы и пыльники" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:cv-boots" aria-label="Убрать: ШРУСы и пыльники" data-confirm="Убрать пункт «ШРУСы и пыльники» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-front-hubs">
+      <div class="grow"><label for="i-front-hubs-n" class="mono">front-hubs</label>
+        <input id="i-front-hubs-n" name="i_front-hubs" type="text" value="Ступичные подшипники" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:front-hubs" aria-label="Выше: Ступичные подшипники" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:front-hubs" aria-label="Ниже: Ступичные подшипники" disabled>↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:front-hubs" aria-label="Убрать: Ступичные подшипники" data-confirm="Убрать пункт «Ступичные подшипники» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+  </ol>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="new-front">Новый пункт</label><input id="new-front" name="new_front" type="text" maxlength="120" placeholder="например: Пыльники рейки"></div>
+    <button class="btn" type="submit" name="op" value="iadd:front">Добавить</button>
+  </div>
+  
+</fieldset>
+
+<fieldset class="card cs-group" id="g-steering">
+  <legend class="sr-only">Рулевое</legend>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="g-steering-n">Группа <span class="mono">steering</span></label>
+      <input id="g-steering-n" name="g_steering" type="text" value="Рулевое" maxlength="80" required></div>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gup:steering" aria-label="Группа выше" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gdown:steering" aria-label="Группа ниже" >↓</button>
+    </span>
+  </div>
+  <ol class="cs-items">
+  
+    <li class="cs-ckrow" id="i-tie-rods">
+      <div class="grow"><label for="i-tie-rods-n" class="mono">tie-rods</label>
+        <input id="i-tie-rods-n" name="i_tie-rods" type="text" value="Рулевые тяги и наконечники" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:tie-rods" aria-label="Выше: Рулевые тяги и наконечники" disabled>↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:tie-rods" aria-label="Ниже: Рулевые тяги и наконечники" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:tie-rods" aria-label="Убрать: Рулевые тяги и наконечники" data-confirm="Убрать пункт «Рулевые тяги и наконечники» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-rack">
+      <div class="grow"><label for="i-rack-n" class="mono">rack</label>
+        <input id="i-rack-n" name="i_rack" type="text" value="Рулевая рейка и пыльники" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:rack" aria-label="Выше: Рулевая рейка и пыльники" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:rack" aria-label="Ниже: Рулевая рейка и пыльники" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:rack" aria-label="Убрать: Рулевая рейка и пыльники" data-confirm="Убрать пункт «Рулевая рейка и пыльники» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-power-steering">
+      <div class="grow"><label for="i-power-steering-n" class="mono">power-steering</label>
+        <input id="i-power-steering-n" name="i_power-steering" type="text" value="Усилитель руля" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:power-steering" aria-label="Выше: Усилитель руля" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:power-steering" aria-label="Ниже: Усилитель руля" disabled>↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:power-steering" aria-label="Убрать: Усилитель руля" data-confirm="Убрать пункт «Усилитель руля» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+  </ol>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="new-steering">Новый пункт</label><input id="new-steering" name="new_steering" type="text" maxlength="120" placeholder="например: Пыльники рейки"></div>
+    <button class="btn" type="submit" name="op" value="iadd:steering">Добавить</button>
+  </div>
+  
+</fieldset>
+
+<fieldset class="card cs-group" id="g-rear">
+  <legend class="sr-only">Задняя подвеска</legend>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="g-rear-n">Группа <span class="mono">rear</span></label>
+      <input id="g-rear-n" name="g_rear" type="text" value="Задняя подвеска" maxlength="80" required></div>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gup:rear" aria-label="Группа выше" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gdown:rear" aria-label="Группа ниже" >↓</button>
+    </span>
+  </div>
+  <ol class="cs-items">
+  
+    <li class="cs-ckrow" id="i-rear-shocks">
+      <div class="grow"><label for="i-rear-shocks-n" class="mono">rear-shocks</label>
+        <input id="i-rear-shocks-n" name="i_rear-shocks" type="text" value="Амортизаторы и пружины" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:rear-shocks" aria-label="Выше: Амортизаторы и пружины" disabled>↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:rear-shocks" aria-label="Ниже: Амортизаторы и пружины" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:rear-shocks" aria-label="Убрать: Амортизаторы и пружины" data-confirm="Убрать пункт «Амортизаторы и пружины» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-rear-arms">
+      <div class="grow"><label for="i-rear-arms-n" class="mono">rear-arms</label>
+        <input id="i-rear-arms-n" name="i_rear-arms" type="text" value="Рычаги, балка, сайлентблоки" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:rear-arms" aria-label="Выше: Рычаги, балка, сайлентблоки" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:rear-arms" aria-label="Ниже: Рычаги, балка, сайлентблоки" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:rear-arms" aria-label="Убрать: Рычаги, балка, сайлентблоки" data-confirm="Убрать пункт «Рычаги, балка, сайлентблоки» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-rear-hubs">
+      <div class="grow"><label for="i-rear-hubs-n" class="mono">rear-hubs</label>
+        <input id="i-rear-hubs-n" name="i_rear-hubs" type="text" value="Ступичные подшипники" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:rear-hubs" aria-label="Выше: Ступичные подшипники" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:rear-hubs" aria-label="Ниже: Ступичные подшипники" disabled>↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:rear-hubs" aria-label="Убрать: Ступичные подшипники" data-confirm="Убрать пункт «Ступичные подшипники» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+  </ol>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="new-rear">Новый пункт</label><input id="new-rear" name="new_rear" type="text" maxlength="120" placeholder="например: Пыльники рейки"></div>
+    <button class="btn" type="submit" name="op" value="iadd:rear">Добавить</button>
+  </div>
+  
+</fieldset>
+
+<fieldset class="card cs-group" id="g-brakes">
+  <legend class="sr-only">Тормоза</legend>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="g-brakes-n">Группа <span class="mono">brakes</span></label>
+      <input id="g-brakes-n" name="g_brakes" type="text" value="Тормоза" maxlength="80" required></div>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gup:brakes" aria-label="Группа выше" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gdown:brakes" aria-label="Группа ниже" >↓</button>
+    </span>
+  </div>
+  <ol class="cs-items">
+  
+    <li class="cs-ckrow" id="i-front-pads">
+      <div class="grow"><label for="i-front-pads-n" class="mono">front-pads</label>
+        <input id="i-front-pads-n" name="i_front-pads" type="text" value="Передние колодки и диски" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:front-pads" aria-label="Выше: Передние колодки и диски" disabled>↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:front-pads" aria-label="Ниже: Передние колодки и диски" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:front-pads" aria-label="Убрать: Передние колодки и диски" data-confirm="Убрать пункт «Передние колодки и диски» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-rear-pads">
+      <div class="grow"><label for="i-rear-pads-n" class="mono">rear-pads</label>
+        <input id="i-rear-pads-n" name="i_rear-pads" type="text" value="Задние колодки, диски или барабаны" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:rear-pads" aria-label="Выше: Задние колодки, диски или барабаны" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:rear-pads" aria-label="Ниже: Задние колодки, диски или барабаны" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:rear-pads" aria-label="Убрать: Задние колодки, диски или барабаны" data-confirm="Убрать пункт «Задние колодки, диски или барабаны» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-brake-lines">
+      <div class="grow"><label for="i-brake-lines-n" class="mono">brake-lines</label>
+        <input id="i-brake-lines-n" name="i_brake-lines" type="text" value="Шланги и трубки" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:brake-lines" aria-label="Выше: Шланги и трубки" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:brake-lines" aria-label="Ниже: Шланги и трубки" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:brake-lines" aria-label="Убрать: Шланги и трубки" data-confirm="Убрать пункт «Шланги и трубки» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-brake-fluid">
+      <div class="grow"><label for="i-brake-fluid-n" class="mono">brake-fluid</label>
+        <input id="i-brake-fluid-n" name="i_brake-fluid" type="text" value="Тормозная жидкость" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:brake-fluid" aria-label="Выше: Тормозная жидкость" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:brake-fluid" aria-label="Ниже: Тормозная жидкость" disabled>↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:brake-fluid" aria-label="Убрать: Тормозная жидкость" data-confirm="Убрать пункт «Тормозная жидкость» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+  </ol>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="new-brakes">Новый пункт</label><input id="new-brakes" name="new_brakes" type="text" maxlength="120" placeholder="например: Пыльники рейки"></div>
+    <button class="btn" type="submit" name="op" value="iadd:brakes">Добавить</button>
+  </div>
+  
+</fieldset>
+
+<fieldset class="card cs-group" id="g-under">
+  <legend class="sr-only">Снизу и под капотом</legend>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="g-under-n">Группа <span class="mono">under</span></label>
+      <input id="g-under-n" name="g_under" type="text" value="Снизу и под капотом" maxlength="80" required></div>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gup:under" aria-label="Группа выше" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gdown:under" aria-label="Группа ниже" >↓</button>
+    </span>
+  </div>
+  <ol class="cs-items">
+  
+    <li class="cs-ckrow" id="i-leaks">
+      <div class="grow"><label for="i-leaks-n" class="mono">leaks</label>
+        <input id="i-leaks-n" name="i_leaks" type="text" value="Подтёки масла и жидкостей" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:leaks" aria-label="Выше: Подтёки масла и жидкостей" disabled>↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:leaks" aria-label="Ниже: Подтёки масла и жидкостей" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:leaks" aria-label="Убрать: Подтёки масла и жидкостей" data-confirm="Убрать пункт «Подтёки масла и жидкостей» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-exhaust">
+      <div class="grow"><label for="i-exhaust-n" class="mono">exhaust</label>
+        <input id="i-exhaust-n" name="i_exhaust" type="text" value="Выхлопная система" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:exhaust" aria-label="Выше: Выхлопная система" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:exhaust" aria-label="Ниже: Выхлопная система" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:exhaust" aria-label="Убрать: Выхлопная система" data-confirm="Убрать пункт «Выхлопная система» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-engine-mounts">
+      <div class="grow"><label for="i-engine-mounts-n" class="mono">engine-mounts</label>
+        <input id="i-engine-mounts-n" name="i_engine-mounts" type="text" value="Опоры двигателя" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:engine-mounts" aria-label="Выше: Опоры двигателя" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:engine-mounts" aria-label="Ниже: Опоры двигателя" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:engine-mounts" aria-label="Убрать: Опоры двигателя" data-confirm="Убрать пункт «Опоры двигателя» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-oil-level">
+      <div class="grow"><label for="i-oil-level-n" class="mono">oil-level</label>
+        <input id="i-oil-level-n" name="i_oil-level" type="text" value="Уровень и состояние масла" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:oil-level" aria-label="Выше: Уровень и состояние масла" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:oil-level" aria-label="Ниже: Уровень и состояние масла" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:oil-level" aria-label="Убрать: Уровень и состояние масла" data-confirm="Убрать пункт «Уровень и состояние масла» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-coolant">
+      <div class="grow"><label for="i-coolant-n" class="mono">coolant</label>
+        <input id="i-coolant-n" name="i_coolant" type="text" value="Охлаждающая жидкость" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:coolant" aria-label="Выше: Охлаждающая жидкость" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:coolant" aria-label="Ниже: Охлаждающая жидкость" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:coolant" aria-label="Убрать: Охлаждающая жидкость" data-confirm="Убрать пункт «Охлаждающая жидкость» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-belts">
+      <div class="grow"><label for="i-belts-n" class="mono">belts</label>
+        <input id="i-belts-n" name="i_belts" type="text" value="Приводные ремни" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:belts" aria-label="Выше: Приводные ремни" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:belts" aria-label="Ниже: Приводные ремни" disabled>↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:belts" aria-label="Убрать: Приводные ремни" data-confirm="Убрать пункт «Приводные ремни» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+  </ol>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="new-under">Новый пункт</label><input id="new-under" name="new_under" type="text" maxlength="120" placeholder="например: Пыльники рейки"></div>
+    <button class="btn" type="submit" name="op" value="iadd:under">Добавить</button>
+  </div>
+  
+</fieldset>
+
+<fieldset class="card cs-group" id="g-wheels">
+  <legend class="sr-only">Колёса</legend>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="g-wheels-n">Группа <span class="mono">wheels</span></label>
+      <input id="g-wheels-n" name="g_wheels" type="text" value="Колёса" maxlength="80" required></div>
+    <span class="cs-move">
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gup:wheels" aria-label="Группа выше" >↑</button>
+      <button class="btn btn--ghost cs-sq" type="submit" name="op" value="gdown:wheels" aria-label="Группа ниже" disabled>↓</button>
+    </span>
+  </div>
+  <ol class="cs-items">
+  
+    <li class="cs-ckrow" id="i-tires">
+      <div class="grow"><label for="i-tires-n" class="mono">tires</label>
+        <input id="i-tires-n" name="i_tires" type="text" value="Износ шин" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:tires" aria-label="Выше: Износ шин" disabled>↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:tires" aria-label="Ниже: Износ шин" >↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:tires" aria-label="Убрать: Износ шин" data-confirm="Убрать пункт «Износ шин» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+    <li class="cs-ckrow" id="i-tire-wear-pattern">
+      <div class="grow"><label for="i-tire-wear-pattern-n" class="mono">tire-wear-pattern</label>
+        <input id="i-tire-wear-pattern-n" name="i_tire-wear-pattern" type="text" value="Неравномерный износ (нужен развал)" maxlength="120" required></div>
+      <span class="cs-move">
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="iup:tire-wear-pattern" aria-label="Выше: Неравномерный износ (нужен развал)" >↑</button>
+        <button class="btn btn--ghost cs-sq" type="submit" name="op" value="idown:tire-wear-pattern" aria-label="Ниже: Неравномерный износ (нужен развал)" disabled>↓</button>
+        <button class="btn btn--danger cs-sq" type="submit" name="op" value="idel:tire-wear-pattern" aria-label="Убрать: Неравномерный износ (нужен развал)" data-confirm="Убрать пункт «Неравномерный износ (нужен развал)» из осмотра?">✕</button>
+      </span>
+    </li>
+  
+  </ol>
+  <div class="cs-ckrow">
+    <div class="grow"><label for="new-wheels">Новый пункт</label><input id="new-wheels" name="new_wheels" type="text" maxlength="120" placeholder="например: Пыльники рейки"></div>
+    <button class="btn" type="submit" name="op" value="iadd:wheels">Добавить</button>
+  </div>
+  
+</fieldset>
+
+</div>
+<div class="card cs-ckrow" id="add" style="margin-top:12px">
+  <div class="grow"><label for="new-group">Новая группа</label><input id="new-group" name="new_group" type="text" maxlength="80"></div>
+  <button class="btn" type="submit" name="op" value="gadd">Добавить группу</button>
+</div>
+<div class="cs-savebar"><button class="btn btn--gold btn--block btn--big" type="submit" name="op" value="save">Сохранить названия</button></div>
+</form>
+</div>
+
+</main>
+
+<script src="../static/m.js" defer></script>
+
+<div class="demo-bar" role="note">Демонстрация на тестовых данных. Ничего не сохраняется — <a href="../index.html">все экраны</a></div>
+<style>body{padding-top:40px}.demo-bar{position:fixed;top:0;left:0;right:0;z-index:99;background:#cba55b;color:#15120e;font:600 14px/1.35 Onest,system-ui,sans-serif;padding:8px 14px;text-align:center}
+.demo-bar a{color:inherit}.demo-toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:100;background:#15120e;color:#f1ebdf;border:1px solid #cba55b;border-radius:10px;padding:12px 16px;font:500 15px/1.4 Onest,system-ui,sans-serif;max-width:90vw}
+.demo-picked{outline:3px solid #cba55b;outline-offset:2px}</style>
+<script>
+(function(){
+  function toast(t){var d=document.createElement('div');d.className='demo-toast';d.textContent=t;document.body.appendChild(d);setTimeout(function(){d.remove()},2600);}
+  document.addEventListener('submit',function(e){e.preventDefault();var b=e.submitter;
+    if(b&&location.pathname.indexOf('/r/')>-1){var row=b.closest('form');if(row){row.querySelectorAll('button').forEach(function(x){x.classList.remove('demo-picked')});}b.classList.add('demo-picked');toast('В настоящей системе ваш выбор «'+b.textContent.trim()+'» сохранится, и мастер его увидит.');}
+    else toast('Демо: в настоящей системе действие сохранится.');},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[href="#demo"]');if(a){e.preventDefault();toast('Этот экран в демо не сохранён.');}},true);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0d0b09">
+<title>Настройки · Sin Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/box.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 32'%3E%3Cpath d='M14 1.5 26.5 8.75v14.5L14 30.5 1.5 23.25V8.75Z' fill='%23100e0c' stroke='%23cba55b' stroke-width='2.5'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="top__in">
+    <a class="brand" href="../m/today.html">Бокс <b>·</b></a>
+    
+    <nav class="nav" aria-label="Разделы">
+      <a href="../m/today.html" >Сегодня</a>
+      
+      <a href="../m/admin.html" >Дела <span class="nav__badge" aria-label="6 ждут">6</span></a>
+      <a href="../m/clients.html" >Клиенты</a>
+      <a href="../m/mail-queue.html" >Рассылки</a>
+      <a href="../m/stats.html" >Сводка</a>
+      <a href="../m/settings.html" aria-current="page">Настройки</a>
+      
+      <form method="post" action="#demo"><button type="submit">Выйти</button></form>
+    </nav>
+    
+  </div>
+</header>
+<main class="page">
+
+<div class="cs-wide">
+<h1>Настройки</h1>
+
+
+
+<div class="cs-grid">
+  
+  <a class="card card--link cs-tile" href="../m/settings-services.html">
+    <strong>Услуги и цены</strong>
+    <span class="small muted">13 на сайте и в записи</span>
+  </a>
+  
+  <a class="card card--link cs-tile" href="../m/settings-hours.html">
+    <strong>Часы работы</strong>
+    <span class="small muted">ежедневно 10:00–20:00</span>
+  </a>
+  
+  <a class="card card--link cs-tile" href="../m/settings-capacity.html">
+    <strong>Ёмкость и запись</strong>
+    <span class="small muted">подъёмников 3, стендов 1, мастеров 3, онлайн 70 %</span>
+  </a>
+  
+  <a class="card card--link cs-tile" href="../m/settings-shop.html">
+    <strong>Сервис</strong>
+    <span class="small muted">+7 993 133-93-36, ул. Трамвайная, 15/4</span>
+  </a>
+  
+  <a class="card card--link cs-tile" href="../m/settings-checklist.html">
+    <strong>Чек-лист осмотра</strong>
+    <span class="small muted">24 пунктов в 6 группах</span>
+  </a>
+  
+  <a class="card card--link cs-tile" href="../m/settings-audit.html">
+    <strong>Журнал</strong>
+    <span class="small muted">последние 200 изменений</span>
+  </a>
+  
+</div>
+
+<h2 id="site">Сайт</h2>
+<div class="card">
+  <p class="small">Цены, часы, контакты и гарантия идут на сайт из тех же файлов. Приложение видит изменения сразу, сайт — после пересборки.</p>
+  <form method="post" action="#demo" style="margin-top:10px">
+    <button class="btn btn--block" type="submit">Обновить сайт</button>
+  </form>
+  <p class="small muted" style="margin-top:6px">Команда сборки не настроена (SITE_BUILD_CMD в app/.env): прайс на сайте обновится после пересборки программистом.</p>
+</div>
+
+<h2 id="staff">Сотрудники</h2>
+
+<div class="card ">
+  <div class="row row--between"><strong>Администратор</strong>
+    <span class="row"><span class="badge">администратор</span></span></div>
+  <div class="cs-staff">
+    <form method="post" action="#demo" class="cs-pin">
+      <input type="hidden" name="action" value="pin">
+      <label class="sr-only" for="pin4">Новый PIN для Администратор</label>
+      <input id="pin4" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4,8}" placeholder="Новый PIN" autocomplete="off">
+      <button class="btn" type="submit">Сменить PIN</button>
+    </form>
+    
+  </div>
+</div>
+
+<div class="card ">
+  <div class="row row--between"><strong>Ильдар</strong>
+    <span class="row"><span class="badge">мастер</span></span></div>
+  <div class="cs-staff">
+    <form method="post" action="#demo" class="cs-pin">
+      <input type="hidden" name="action" value="pin">
+      <label class="sr-only" for="pin2">Новый PIN для Ильдар</label>
+      <input id="pin2" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4,8}" placeholder="Новый PIN" autocomplete="off">
+      <button class="btn" type="submit">Сменить PIN</button>
+    </form>
+    
+    <form method="post" action="#demo" data-confirm="Отключить Ильдар? Войти по PIN он больше не сможет.">
+      <input type="hidden" name="action" value="toggle">
+      <button class="btn btn--danger btn--block" type="submit">Отключить</button>
+    </form>
+    
+  </div>
+</div>
+
+<div class="card ">
+  <div class="row row--between"><strong>Руслан</strong>
+    <span class="row"><span class="badge">мастер</span></span></div>
+  <div class="cs-staff">
+    <form method="post" action="#demo" class="cs-pin">
+      <input type="hidden" name="action" value="pin">
+      <label class="sr-only" for="pin3">Новый PIN для Руслан</label>
+      <input id="pin3" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4,8}" placeholder="Новый PIN" autocomplete="off">
+      <button class="btn" type="submit">Сменить PIN</button>
+    </form>
+    
+    <form method="post" action="#demo" data-confirm="Отключить Руслан? Войти по PIN он больше не сможет.">
+      <input type="hidden" name="action" value="toggle">
+      <button class="btn btn--danger btn--block" type="submit">Отключить</button>
+    </form>
+    
+  </div>
+</div>
+
+<div class="card ">
+  <div class="row row--between"><strong>Фёдор</strong>
+    <span class="row"><span class="badge">мастер</span></span></div>
+  <div class="cs-staff">
+    <form method="post" action="#demo" class="cs-pin">
+      <input type="hidden" name="action" value="pin">
+      <label class="sr-only" for="pin1">Новый PIN для Фёдор</label>
+      <input id="pin1" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4,8}" placeholder="Новый PIN" autocomplete="off">
+      <button class="btn" type="submit">Сменить PIN</button>
+    </form>
+    
+    <form method="post" action="#demo" data-confirm="Отключить Фёдор? Войти по PIN он больше не сможет.">
+      <input type="hidden" name="action" value="toggle">
+      <button class="btn btn--danger btn--block" type="submit">Отключить</button>
+    </form>
+    
+  </div>
+</div>
+
+<details class="card cs-add" id="staff-add">
+  <summary>Добавить сотрудника</summary>
+  <form method="post" action="#demo">
+    <div class="field" style="margin-top:0"><label for="sn">Имя</label><input id="sn" name="name" type="text" required maxlength="80"></div>
+    <div class="grid2 field">
+      <div><label for="sr">Роль</label><select id="sr" name="role"><option value="master">Мастер</option><option value="admin">Администратор</option></select></div>
+      <div><label for="sp">PIN (4–8 цифр)</label><input id="sp" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4,8}" required autocomplete="off"></div>
+    </div>
+    <button class="btn btn--gold btn--block" type="submit" style="margin-top:12px">Добавить</button>
+  </form>
+</details>
+</div>
+
+</main>
+
+<script src="../static/m.js" defer></script>
+
+<div class="demo-bar" role="note">Демонстрация на тестовых данных. Ничего не сохраняется — <a href="../index.html">все экраны</a></div>
+<style>body{padding-top:40px}.demo-bar{position:fixed;top:0;left:0;right:0;z-index:99;background:#cba55b;color:#15120e;font:600 14px/1.35 Onest,system-ui,sans-serif;padding:8px 14px;text-align:center}
+.demo-bar a{color:inherit}.demo-toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:100;background:#15120e;color:#f1ebdf;border:1px solid #cba55b;border-radius:10px;padding:12px 16px;font:500 15px/1.4 Onest,system-ui,sans-serif;max-width:90vw}
+.demo-picked{outline:3px solid #cba55b;outline-offset:2px}</style>
+<script>
+(function(){
+  function toast(t){var d=document.createElement('div');d.className='demo-toast';d.textContent=t;document.body.appendChild(d);setTimeout(function(){d.remove()},2600);}
+  document.addEventListener('submit',function(e){e.preventDefault();var b=e.submitter;
+    if(b&&location.pathname.indexOf('/r/')>-1){var row=b.closest('form');if(row){row.querySelectorAll('button').forEach(function(x){x.classList.remove('demo-picked')});}b.classList.add('demo-picked');toast('В настоящей системе ваш выбор «'+b.textContent.trim()+'» сохранится, и мастер его увидит.');}
+    else toast('Демо: в настоящей системе действие сохранится.');},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[href="#demo"]');if(a){e.preventDefault();toast('Этот экран в демо не сохранён.');}},true);
+})();
+</script>
+</body>
+</html>

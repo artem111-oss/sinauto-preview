@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0d0b09">
+<title>Рассылки · Sin Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/box.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 32'%3E%3Cpath d='M14 1.5 26.5 8.75v14.5L14 30.5 1.5 23.25V8.75Z' fill='%23100e0c' stroke='%23cba55b' stroke-width='2.5'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="top__in">
+    <a class="brand" href="../m/today.html">Бокс <b>·</b></a>
+    
+    <nav class="nav" aria-label="Разделы">
+      <a href="../m/today.html" >Сегодня</a>
+      
+      <a href="../m/admin.html" >Дела <span class="nav__badge" aria-label="6 ждут">6</span></a>
+      <a href="../m/clients.html" >Клиенты</a>
+      <a href="../m/mail-queue.html" aria-current="page">Рассылки</a>
+      <a href="../m/stats.html" >Сводка</a>
+      <a href="../m/settings.html" >Настройки</a>
+      
+      <form method="post" action="#demo"><button type="submit">Выйти</button></form>
+    </nav>
+    
+  </div>
+</header>
+<main class="page">
+
+<div class="mail">
+<h1>Рассылки</h1>
+
+<nav class="mtabs" aria-label="Вкладки рассылок">
+  
+  <a href="../m/mail-queue.html" >Очередь</a>
+  
+  <a href="../m/mail-rules.html" >Правила</a>
+  
+  <a href="../m/mail-texts.html" aria-current="page">Тексты</a>
+  
+  <a href="../m/mail-announce.html" >Объявление</a>
+  
+  <a href="../m/mail-stats.html" >Итоги</a>
+  
+</nav>
+
+
+
+
+<p class="small muted mgap">Тексты сообщений клиентам. Изменение не трогает уже поставленные в очередь сообщения.</p>
+
+<h2>Запись</h2>
+<div class="mgrid mgrid--2">
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Подтверждение записи</strong></span>
+    <span class="mtext small muted">Вы записаны в {shop}: {service}, {when}.
+Адрес: {address}.
+Подтвердите, пожалуйста, запись.</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Напоминание о записи (накануне)</strong></span>
+    <span class="mtext small muted">Напоминаем: ждём вас {when} — {service}.
+Адрес: {address}.
+Если планы поменялись, нажмите «Перенести» или «Отменить».</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Напоминание в день записи</strong></span>
+    <span class="mtext small muted">Ждём вас {when}: {address}. Телефон: {phone}.</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+</div>
+
+<h2>Ремонт</h2>
+<div class="mgrid mgrid--2">
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Машину приняли</strong></span>
+    <span class="mtext small muted">Приняли машину {plate}. Сейчас осмотрим и пришлём отчёт с фото.</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Отчёт об осмотре</strong></span>
+    <span class="mtext small muted">Осмотр {plate} готов. {found}
+Отчёт с фото и сметой: {link}
+Отметьте, что делаем сейчас, а что позже.</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Начали работы</strong></span>
+    <span class="mtext small muted">Начали работы по {plate}. {promise}</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Машина готова</strong></span>
+    <span class="mtext small muted">Машина {plate} готова, можно забирать. {pay} {until}</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Спасибо за визит</strong></span>
+    <span class="mtext small muted">Спасибо, что приехали в {shop}! Список работ по {plate}: {link}
+{warranty}</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+</div>
+
+<h2>После визита</h2>
+<div class="mgrid mgrid--2">
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>«Как машина?»</strong></span>
+    <span class="mtext small muted">Как {plate} после ремонта? Если что-то не так — скажите, разберёмся.</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Просьба об отзыве</strong></span>
+    <span class="mtext small muted">Если вам у нас понравилось, оставьте, пожалуйста, отзыв — он помогает другим водителям найти сервис.
+{review_links}</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+</div>
+
+<h2>Напоминания</h2>
+<div class="mgrid mgrid--2">
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Отложенные работы</strong></span>
+    <span class="mtext small muted">{ago} по {plate} отложили: {works}.
+Отчёт с фото: {link}
+Записаться: {phone}.</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Замена масла</strong></span>
+    <span class="mtext small muted">Прошло {months} мес. с замены масла на {plate} {mileage}. Пора менять.
+Записаться: {link} или {phone}.</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Смена шин</strong></span>
+    <span class="mtext small muted">Пора менять шины {car} на {season}.
+Записаться на шиномонтаж: {link} или {phone}.</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+</div>
+
+<h2>Реклама</h2>
+<div class="mgrid mgrid--2">
+  
+  <a class="card card--link mtpl" href="../m/mail-queue.html">
+    <span class="row row--between"><strong>Давно не были (реклама)</strong></span>
+    <span class="mtext small muted">Давно вас не видели. Приглашаем на бесплатный осмотр ходовой: поднимем машину, покажем фото и скажем, что срочно, а что может подождать.
+Записаться: {link}</span>
+    <span class="small mlink">Изменить →</span>
+  </a>
+  
+</div>
+
+
+</div>
+
+</main>
+
+<script src="../static/m.js" defer></script>
+<script>
+(function () {
+  'use strict';
+  // счётчик символов: <textarea data-count> + <span class="js-count"> в том же .field
+  Array.prototype.forEach.call(document.querySelectorAll('textarea[data-count]'), function (ta) {
+    var box = ta.closest('.field');
+    var out = box && box.querySelector('.js-count');
+    var max = parseInt(ta.getAttribute('data-count'), 10);
+    function upd() {
+      if (!out) return;
+      out.textContent = ta.value.length;
+      out.parentNode.classList.toggle('mcount--over', ta.value.length > max);
+    }
+    ta.addEventListener('input', upd);
+    upd();
+  });
+  // подстановки: кнопка с data-insert вставляет {имя} в позицию курсора
+  var tpl = document.getElementById('tpl-text');
+  Array.prototype.forEach.call(document.querySelectorAll('[data-insert]'), function (b) {
+    b.addEventListener('click', function () {
+      if (!tpl) return;
+      var v = b.getAttribute('data-insert');
+      var a = tpl.selectionStart || 0, z = tpl.selectionEnd || 0;
+      tpl.value = tpl.value.slice(0, a) + v + tpl.value.slice(z);
+      tpl.focus();
+      tpl.selectionStart = tpl.selectionEnd = a + v.length;
+      tpl.dispatchEvent(new Event('input'));
+    });
+  });
+  // фильтр по виду: выбор сразу показывает список (без JS — кнопка «Показать»)
+  Array.prototype.forEach.call(document.querySelectorAll('select[data-autosubmit]'), function (sel) {
+    sel.addEventListener('change', function () { sel.form.submit(); });
+  });
+})();
+</script>
+
+
+<div class="demo-bar" role="note">Демонстрация на тестовых данных. Ничего не сохраняется — <a href="../index.html">все экраны</a></div>
+<style>body{padding-top:40px}.demo-bar{position:fixed;top:0;left:0;right:0;z-index:99;background:#cba55b;color:#15120e;font:600 14px/1.35 Onest,system-ui,sans-serif;padding:8px 14px;text-align:center}
+.demo-bar a{color:inherit}.demo-toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:100;background:#15120e;color:#f1ebdf;border:1px solid #cba55b;border-radius:10px;padding:12px 16px;font:500 15px/1.4 Onest,system-ui,sans-serif;max-width:90vw}
+.demo-picked{outline:3px solid #cba55b;outline-offset:2px}</style>
+<script>
+(function(){
+  function toast(t){var d=document.createElement('div');d.className='demo-toast';d.textContent=t;document.body.appendChild(d);setTimeout(function(){d.remove()},2600);}
+  document.addEventListener('submit',function(e){e.preventDefault();var b=e.submitter;
+    if(b&&location.pathname.indexOf('/r/')>-1){var row=b.closest('form');if(row){row.querySelectorAll('button').forEach(function(x){x.classList.remove('demo-picked')});}b.classList.add('demo-picked');toast('В настоящей системе ваш выбор «'+b.textContent.trim()+'» сохранится, и мастер его увидит.');}
+    else toast('Демо: в настоящей системе действие сохранится.');},true);
+  document.addEventListener('click',function(e){var a=e.target.closest('a[href="#demo"]');if(a){e.preventDefault();toast('Этот экран в демо не сохранён.');}},true);
+})();
+</script>
+</body>
+</html>
