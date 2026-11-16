@@ -198,4 +198,50 @@
     day.addEventListener('change', loadSlots);
     loadSlots();
   }
+
+  // --- введённое не теряется при ошибке проверки ---
+  // Перед отправкой форма запоминает поля (sessionStorage, только эта вкладка). Если сервер вернул страницу
+  // с ошибкой (?err=…), значения подставляются обратно. Без ошибки черновик удаляется. PIN не запоминается.
+  (function keepDrafts() {
+    var store;
+    try { store = window.sessionStorage; store.setItem('box-t', '1'); store.removeItem('box-t'); } catch (e) { return; }
+    var forms = $all('form[method="post"]');
+    var hasErr = /[?&]err=/.test(location.search) || !!$('.flash--err');
+    function key(form, i) { return 'box-draft:' + location.pathname + ':' + (form.getAttribute('action') || '') + ':' + i; }
+    function skip(el) { return !el.name || el.type === 'password' || el.type === 'file' || el.type === 'hidden' || el.type === 'submit' || el.type === 'button'; }
+    forms.forEach(function (form, i) {
+      var k = key(form, i);
+      var raw = null;
+      try { raw = store.getItem(k); } catch (e) { raw = null; }
+      if (raw && hasErr) {
+        var saved = {};
+        try { saved = JSON.parse(raw); } catch (e) { saved = {}; }
+        var restored = false;
+        $all('input, select, textarea', form).forEach(function (el, j) {
+          if (skip(el)) return;
+          var id = el.name + '#' + j;
+          if (!(id in saved)) return;
+          if (el.type === 'checkbox' || el.type === 'radio') el.checked = !!saved[id];
+          else el.value = saved[id];
+          restored = true;
+        });
+        if (restored && !form.querySelector('.js-restored')) {
+          var note = document.createElement('p');
+          note.className = 'small muted js-restored';
+          note.setAttribute('role', 'status');
+          note.textContent = 'Вернули то, что вы ввели. Исправьте и сохраните ещё раз.';
+          form.insertBefore(note, form.firstChild);
+        }
+      }
+      try { store.removeItem(k); } catch (e) { /* ничего */ }
+      form.addEventListener('submit', function () {
+        var data = {};
+        $all('input, select, textarea', form).forEach(function (el, j) {
+          if (skip(el)) return;
+          data[el.name + '#' + j] = (el.type === 'checkbox' || el.type === 'radio') ? el.checked : el.value;
+        });
+        try { store.setItem(k, JSON.stringify(data)); } catch (e) { /* место кончилось — не страшно */ }
+      });
+    });
+  })();
 })();

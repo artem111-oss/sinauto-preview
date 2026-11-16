@@ -10,11 +10,31 @@
   root.classList.add('js');
   if (motion) { root.classList.add('motion'); gsap.registerPlugin(ScrollTrigger); ScrollTrigger.config({ ignoreMobileResize: true }); }
 
-  /* --- открыто ли сейчас (время Уфы, UTC+5) --- */
-  const ufa = new Date(Date.now() + (new Date().getTimezoneOffset() + 300) * 60000);
-  const mins = ufa.getHours() * 60 + ufa.getMinutes(), open = mins >= 600 && mins < 1200;
-  $$('[data-open]').forEach((el) => { el.textContent = open ? 'открыто до 20:00' : 'откроемся в 10:00'; el.hidden = false; el.classList.toggle('is-closed', !open); });
-  $$('[data-open-long]').forEach((el) => { el.textContent = open ? 'Сейчас открыто.' : 'Сейчас закрыто, сообщение прочитаем утром.'; });
+  /* --- открыто ли сейчас (время Уфы, UTC+5). Часы — из <meta name="box-hours">, их пишет сборка из data/shop.json --- */
+  let hours = { week: Array(7).fill(['10:00', '20:00']), special: {} };
+  try { const m = $('meta[name="box-hours"]'); if (m) hours = JSON.parse(m.content); } catch (e) { /* остаются часы по умолчанию */ }
+  const toMin = (t) => { const [h, mm] = t.split(':'); return +h * 60 + +mm; };
+  const iso = (x) => x.toISOString().slice(0, 10);
+  const ufaAt = (dayShift) => { const x = new Date(Date.now() + 300 * 60000); x.setUTCDate(x.getUTCDate() + dayShift); return x; };
+  const hoursOn = (x) => {
+    const key = iso(x);
+    if (Object.prototype.hasOwnProperty.call(hours.special || {}, key)) return hours.special[key];
+    return hours.week[(x.getUTCDay() + 6) % 7];
+  };
+  const DAYS = ['в воскресенье', 'в понедельник', 'во вторник', 'в среду', 'в четверг', 'в пятницу', 'в субботу'];
+  const nowUfa = ufaAt(0), mins = nowUfa.getUTCHours() * 60 + nowUfa.getUTCMinutes();
+  const today = hoursOn(nowUfa);
+  const open = !!today && mins >= toMin(today[0]) && mins < toMin(today[1]);
+  let next = '';
+  if (!open) {
+    if (today && mins < toMin(today[0])) next = `откроемся в ${today[0]}`;
+    else for (let i = 1; i <= 14; i++) {
+      const day = ufaAt(i), h = hoursOn(day);
+      if (h) { next = `откроемся ${i === 1 ? 'завтра' : DAYS[day.getUTCDay()]} в ${h[0]}`; break; }
+    }
+  }
+  $$('[data-open]').forEach((el) => { el.textContent = open ? `открыто до ${today[1]}` : next; el.hidden = !el.textContent; el.classList.toggle('is-closed', !open); });
+  $$('[data-open-long]').forEach((el) => { el.textContent = open ? 'Сейчас открыто.' : 'Сейчас закрыто, сообщение прочитаем, когда откроемся.'; });
 
   /* --- видео: источник подставляется по требованию, вне экрана пауза --- */
   const sized = (u) => (desktop.matches || /zero-|-m\.mp4$/.test(u) ? u : u.replace('.mp4', '-m.mp4'));
