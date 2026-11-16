@@ -19,7 +19,60 @@
 
   /* --- сеть: таймаут 8 секунд; сетевой сбой → режим «позвоните» --- */
   class Offline extends Error {}
+
+  /* --- демо-режим (<meta name="box-api" content="demo">): макет без сервера, ответы по контракту API --- */
+  const demo = (() => {
+    if (api !== 'demo') return null;
+    const bar = d.createElement('p');
+    bar.className = 'booking__demo';
+    bar.setAttribute('role', 'note');
+    bar.textContent = 'Демонстрация: свободное время условное, запись в сервис не уходит.';
+    form.prepend(bar);
+    const nowParts = () => {
+      const p = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date()).map((x) => [x.type, x.value]));
+      return { day: `${p.year}-${p.month}-${p.day}`, min: +p.hour * 60 + +p.minute };
+    };
+    const busy = (day, m) => { let h = 0; for (const c of day + m) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h % 3 === 0; };
+    const slotsFor = (day) => {
+      const n = nowParts(), out = [];
+      for (let m = 600; m <= 1140; m += 30) {
+        if (day === n.day && m < n.min + 60) continue;
+        if (busy(day, m)) continue;
+        out.push(String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0'));
+      }
+      return out;
+    };
+    const label = (day, t) => {
+      const n = nowParts().day;
+      const pre = day === n ? 'Сегодня' : day === addDays(n, 1) ? 'Завтра' : dayLabel(day);
+      return `${pre} ${t}`;
+    };
+    return (path, opts) => {
+      const u = new URL(path, 'https://demo.local');
+      if (u.pathname === '/api/services') return { status: 200, ok: true, data: [] };
+      if (u.pathname === '/api/slots/nearest') {
+        const lim = +(u.searchParams.get('limit') || 4), res = [];
+        for (let i = 0; i < 7 && res.length < lim; i++) {
+          const day = addDays(nowParts().day, i);
+          for (const t of slotsFor(day)) { if (res.length < lim) res.push({ date: day, time: t, label: label(day, t) }); }
+        }
+        return { status: 200, ok: true, data: { slots: res } };
+      }
+      if (u.pathname === '/api/slots') {
+        const day = u.searchParams.get('date');
+        return { status: 200, ok: true, data: { date: day, slots: slotsFor(day) } };
+      }
+      if (u.pathname === '/api/bookings' && opts.method === 'POST') {
+        const b = JSON.parse(opts.body || '{}');
+        if (!b.consent_pd) return { status: 422, ok: false, data: { error: 'consent_required', message: 'Нужно согласие на обработку персональных данных.' } };
+        return { status: 201, ok: true, data: { id: 0, status: 'new', start_label: label(b.date, b.time), telegram_link: null } };
+      }
+      return { status: 404, ok: false, data: { error: 'not_found', message: 'Нет такого адреса' } };
+    };
+  })();
+
   const call = async (path, opts = {}) => {
+    if (demo) { await new Promise((r) => setTimeout(r, 250)); return demo(path, opts); }
     if (!api) throw new Offline('no api');
     const ctl = new AbortController();
     const t = setTimeout(() => ctl.abort(), 8000);

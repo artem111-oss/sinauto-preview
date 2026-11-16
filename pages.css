@@ -153,6 +153,7 @@
 .zhead__lead { max-width: 46ch; margin-top: 16px; font-size: 19px; line-height: 1.4; }
 .zgrid { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: clamp(28px, 4vw, 64px); align-items: start; padding-bottom: clamp(72px, 9vw, 140px); }
 .booking { background: var(--c-bone); color: var(--c-ink); }
+.booking__demo { margin: 0 0 18px; padding: 10px 14px; border-left: 4px solid var(--c-gold); background: var(--c-bone-2); color: var(--c-ink); font-size: 15px; }
 .booking[hidden], .done[hidden], .zoff[hidden] { display: none; }
 .bstep { min-width: 0; margin: 0; padding: clamp(20px, 3vw, 40px); border: 0; }
 .bstep + .bstep { border-top: 1.5px solid var(--c-line-ink); }
